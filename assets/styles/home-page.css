@@ -151,3 +151,119 @@ table.table.table-bordered > tbody > tr > td {
     position: relative;
     top: 35px;
 }
+
+@media all and (max-width: 1440px) {
+    #main-section {
+        width: 63vw;
+    }
+
+    #sub-section {
+        width: 35vw;
+    }
+}
+
+@media all and (max-width: 1333px) {
+    #main-section {
+        width: 60vw;
+    }
+
+    #sub-section {
+        width: 38vw;
+    }
+}
+
+@media all and (max-width: 1024px) {
+
+    #container {
+        height: 155vh;
+        position: relative;
+        padding-bottom: 47px; /* Height of the footer */
+    }
+
+    #main-section {
+        top: 80vh;
+        width: 94vw;
+    }
+
+    #sub-section {
+        width: 90vw;
+        left: 5vw;
+    }
+}
+
+
+@media all and (max-width: 990px) {
+
+    #container {
+        height: 155vh;
+        position: relative;
+        padding-bottom: 47px; /* Height of the footer */
+    }
+
+    #main-section {
+        top: 80vh;
+        width: 94vw;
+    }
+
+    #sub-section {
+        width: 90vw;
+        left: 5vw;
+    }
+}
+
+@media all and (max-width: 764px) {
+
+    #container {
+        height: 155vh;
+        position: relative;
+        padding-bottom: 47px; /* Height of the footer */
+    }
+
+    #main-section {
+        top: 80vh;
+        width: 94vw;
+    }
+
+    #sub-section {
+        width: 90vw;
+        left: 5vw;
+    }
+}
+
+@media all and (max-width: 580px) {
+    #container {
+        height: 180vh;
+        position: relative;
+        padding-bottom: 47px; /* Height of the footer */
+    }
+
+    #main-section {
+        top: 105vh;
+        width: 94vw;
+    }
+
+    #sub-section {
+        height: 105vh;
+        width: 90vw;
+        left: 5vw;
+    }
+}
+
+@media all and (max-width: 425px) {
+    #container {
+        height: 180vh;
+        position: relative;
+        padding-bottom: 47px; /* Height of the footer */
+    }
+
+    #main-section {
+        top: 105vh;
+        width: 94vw;
+    }
+
+    #sub-section {
+        height: 105vh;
+        width: 90vw;
+        left: 5vw;
+    }
+}
