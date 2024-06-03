@@ -1,7 +1,7 @@
 body {
     background-color: #FEE5D4;
 }
-#nav-bar-tags>a {
+#nav-bar-tags>span {
     margin-right: 25px; /* Adjust this value to set the space between anchor tags */
     margin-top: 10px;
     font-family: "Lexend", sans-serif;
@@ -11,15 +11,6 @@ body {
     position: sticky;
     margin-left: 200px;
     margin-right: 50px;
-}
-
-#current-page-button {
-    background-color: #B05200;
-    color: #FFEEE2;
-    padding: 18px 28px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: 1000;
 }
 
 .Orders,
@@ -54,7 +45,7 @@ footer>p {
 
 #home-main-section {
     width: 70vw;
-    height: 70vh;
+    height: 675px;
     background-color: #FFF4ED;
     position: relative;
     text-align: center;
@@ -72,7 +63,7 @@ footer>p {
 
 #home-sub-section {
     width: 28vw;
-    height: 70vh;
+    height: 690px;
     position: absolute;
     padding: 20px;
 }
