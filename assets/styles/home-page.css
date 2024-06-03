@@ -324,9 +324,10 @@ table.table.table-bordered > tbody > tr > td {
         margin: auto;
     }
 
-    #main-section {
-        top: 105vh;
+    #home-main-section {
+        top: 940px;
         width: 94vw;
+        height: 740px;
     }
 
     #sub-section {
