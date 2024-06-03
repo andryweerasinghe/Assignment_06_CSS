@@ -65,7 +65,7 @@ footer>p {
     border-radius: 30px;
     padding: 20px; /* Add padding to prevent content from sticking to edges */
 }
-#main-section>label {
+#home-main-section>label {
     font-size: x-large;
     font-style: italic;
 }
