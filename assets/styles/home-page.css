@@ -292,7 +292,7 @@ table.table.table-bordered > tbody > tr > td {
 }
 
 @media all and (max-width: 580px) {
-    #container {
+    #container-home-section {
         height: 180vh;
         position: relative;
         padding-bottom: 47px; /* Height of the footer */
