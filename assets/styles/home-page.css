@@ -340,4 +340,9 @@ table.table.table-bordered > tbody > tr > td {
         position: relative;
         margin-top: 280px;
     }
+
+    #Tbl {
+        /* position: relative; */
+        top: 35px;
+    }
 }
