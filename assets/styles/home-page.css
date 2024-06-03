@@ -330,8 +330,8 @@ table.table.table-bordered > tbody > tr > td {
         height: 740px;
     }
 
-    #sub-section {
-        height: 105vh;
+    #home-sub-section {
+        height: 990px;
         width: 90vw;
         left: 5vw;
     }
