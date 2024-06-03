@@ -152,6 +152,17 @@ label {
     margin: auto;
 }
 
+#sales {
+    width: fit-content;
+    height: fit-content;
+    font-size: 28px;
+    position: absolute;
+    top: 120px;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
 table.table-bordered > thead > tr > th{
     border:2px solid #B05200;
     background-color: #FEE5D4;
