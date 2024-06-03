@@ -25,6 +25,13 @@ body {
     font-weight: 700;
 }
 
+.Orders:hover,
+.Customers:hover,
+.Items:hover {
+    background-color: #B05200;
+    color: #FEE5D4;
+}
+
 #current-page-button {
     background-color: #B05200;
     color: #FFEEE2;
