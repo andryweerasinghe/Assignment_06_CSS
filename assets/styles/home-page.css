@@ -220,11 +220,11 @@ table.table.table-bordered > tbody > tr > td {
 }
 
 @media all and (max-width: 1333px) {
-    #main-section {
+    #home-main-section {
         width: 60vw;
     }
 
-    #sub-section {
+    #home-sub-section {
         width: 38vw;
     }
 }
