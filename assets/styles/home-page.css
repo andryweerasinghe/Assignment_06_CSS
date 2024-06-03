@@ -163,6 +163,17 @@ label {
     margin: auto;
 }
 
+#totalItemsHome {
+    width: fit-content;
+    height: fit-content;
+    font-size: 22px;
+    position: absolute;
+    top: 100px;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
 table.table-bordered > thead > tr > th{
     border:2px solid #B05200;
     background-color: #FEE5D4;
