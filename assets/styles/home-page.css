@@ -316,6 +316,14 @@ table.table.table-bordered > tbody > tr > td {
         padding-bottom: 47px; /* Height of the footer */
     }
 
+    #home-middle-card {
+        top: 0;
+        left: 0;
+        bottom: 100px;
+        right: 0;
+        margin: auto;
+    }
+
     #main-section {
         top: 105vh;
         width: 94vw;
