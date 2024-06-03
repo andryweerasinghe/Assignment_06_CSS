@@ -310,8 +310,8 @@ table.table.table-bordered > tbody > tr > td {
 }
 
 @media all and (max-width: 425px) {
-    #container {
-        height: 180vh;
+    #container-home-section {
+        height: 1730px;
         position: relative;
         padding-bottom: 47px; /* Height of the footer */
     }
