@@ -231,18 +231,18 @@ table.table.table-bordered > tbody > tr > td {
 
 @media all and (max-width: 1024px) {
 
-    #container {
+    #container-home-section {
         height: 155vh;
         position: relative;
         padding-bottom: 47px; /* Height of the footer */
     }
 
-    #main-section {
+    #home-main-section {
         top: 80vh;
         width: 94vw;
     }
 
-    #sub-section {
+    #home-sub-section {
         width: 90vw;
         left: 5vw;
     }
