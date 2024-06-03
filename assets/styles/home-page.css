@@ -232,13 +232,13 @@ table.table.table-bordered > tbody > tr > td {
 @media all and (max-width: 1024px) {
 
     #container-home-section {
-        height: 155vh;
+        height: 1550px;
         position: relative;
         padding-bottom: 47px; /* Height of the footer */
     }
 
     #home-main-section {
-        top: 80vh;
+        top: 800px;
         width: 94vw;
     }
 
