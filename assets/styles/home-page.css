@@ -335,4 +335,9 @@ table.table.table-bordered > tbody > tr > td {
         width: 90vw;
         left: 5vw;
     }
+
+    #cards-2 {
+        position: relative;
+        margin-top: 280px;
+    }
 }
