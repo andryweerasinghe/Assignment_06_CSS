@@ -185,6 +185,11 @@ label {
     margin: auto;
 }
 
+#home-middle-card>label {
+    margin-top: 15px;
+    font-size: 22px;
+}
+
 table.table-bordered > thead > tr > th{
     border:2px solid #B05200;
     background-color: #FEE5D4;
