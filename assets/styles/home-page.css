@@ -13,25 +13,6 @@ body {
     margin-right: 50px;
 }
 
-.Orders,
-.Customers,
-.Items {
-    display: inline-block;
-    color: #B05200;
-    padding: 18px 28px;
-    border-radius: 30px;
-    text-decoration: none;
-    margin-right: 25px; /* Adjust this value to set the space between anchor tags */
-    font-weight: 700;
-}
-
-.Orders:hover,
-.Customers:hover,
-.Items:hover {
-    background-color: #B05200;
-    color: #FEE5D4;
-}
-
 #current-page-button {
     background-color: #B05200;
     color: #FFEEE2;
