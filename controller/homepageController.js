@@ -39,3 +39,53 @@ function updateTotalSales(){
     });
     $('#sales').text("Rs. " + totalSales + "/=");
 }
+
+$('nav-home-section').on('click', function(){
+    const home = $('.current-page-button');
+    const orders = $('.Orders');
+    const customers = $('.Customers');
+    const items = $('.Items');
+
+    $('#home-section').show();
+    $('#orders-section').hide();
+    $('#customers-section').hide();
+    $('#items-section').hide();
+
+    function buttonStyling(button){
+        button.css({
+            background: 'none',
+            color: '#B05200',
+            padding: '18px 28px',
+            border: '30px',
+            text: 'none',
+            font: '700',
+            cursor: 'pointer'
+        });
+    }
+
+    buttonStyling(orders);
+    buttonStyling(customers);
+    buttonStyling(items);
+
+    function applyingHoverEffect(button){
+        button.hover(function (){
+            $(this).css({
+                background: '#B05200',
+                color: '#FEE5D4'
+            });
+        }, function (){
+            $(this).css({
+                background: 'none',
+                color: '#B05200',
+                padding: '18px 28px',
+                border: '30px',
+                text: 'none',
+                font: '700'
+            });
+        });
+    }
+
+    applyingHoverEffect(orders);
+    applyingHoverEffect(customers);
+    applyingHoverEffect(items);
+})
