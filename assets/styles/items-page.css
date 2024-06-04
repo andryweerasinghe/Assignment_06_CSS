@@ -55,11 +55,11 @@ footer>p {
 
 #items-main-section {
     width: 98vw;
-    height: 70vh;
+    height: 110vh;
     background-color: #e7e9e9;
     margin: auto;
     border-radius: 30px;
-    padding: 20px; /* Add padding to prevent content from sticking to edges */
+    padding: 20px;
 }
 
 #items-container {

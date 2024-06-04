@@ -303,7 +303,9 @@ table.table.table-bordered > tbody > tr > td {
 
 #orders-content-card-left>button.btn.btn-primary:hover,
 #orders-content-card-right>button.btn.btn-primary:hover {
-    border: 3px solid rgba(255, 255, 255, 0.53);
+    border: 3px solid #122620;
+    background-color: #122620;
+    color: #e7e9e9;
 }
 
 #orders-content-card-left>#btnClear-1:hover,
@@ -383,14 +385,14 @@ table.table.table-bordered > tbody > tr > td {
 
 #orders-content-card-right>#lblCustomerName-orders {
     position: absolute;
-    left: 380px;
+    left: 366px;
     top: 110px;
 }
 
 #orders-content-card-right>#txtCustomerName-orders {
     width: 250px;
     position: absolute;
-    left: 370px;
+    left: 354px;
     top: 140px;
 }
 
@@ -472,11 +474,11 @@ table.table.table-bordered > tbody > tr > td {
     }
 
     #orders-content-card-left > #txtUnitPrice-orders {
-        left: 410px;
+        left: 393px;
     }
 
     #orders-content-card-left > #lblUnitPrice-orders {
-        left: 425px;
+        left: 407px;
     }
 
     #orders-content-card-left > #txtItemId-orders,
@@ -496,7 +498,7 @@ table.table.table-bordered > tbody > tr > td {
 
     #orders-content-card-left>#btnClear-1 {
         width: 75px;
-        left: 484px;
+        left: 421px;
         top: 241px;
     }
 
@@ -505,29 +507,37 @@ table.table.table-bordered > tbody > tr > td {
     }
 
     #orders-content-card-right>#lblOrderDate {
-        left: 214px;
+        left: 200px;
     }
 
     #orders-content-card-right>#txtOrderDate {
         width: 140px;
         background-position: 97px;
-        left: 202px;
+        left: 187px;
     }
 
     #orders-content-card-right>button.btn.btn-primary {
-        width: 120px;
-        left: 358px;
+        width: 126px;
+        position: absolute;
+        border-radius: 20px;
+        border: 3px solid #122620;
+        background-color: #e7e9e9;
+        color: #122620;
+        font-weight: 550;
+        font-family: "Lexend", sans-serif;
+        left: 330px;
+        top: 242px;
     }
 
     #orders-content-card-right>#btnClear-2 {
         width: 75px;
-        left: 486px;
+        left: 460px;
+        top: 242px;
     }
 
     #orders-main-section>#lblTotalPrice {
         font-size: 21px;
-        left: 45vw;
-        top: 29vh;
+        top: 8vh;
     }
 
     #total-price {

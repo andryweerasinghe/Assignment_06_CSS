@@ -198,7 +198,7 @@ table.table.table-bordered > tbody > tr > td {
 #customers-content-card-left > #txtPhoneNumber:focus,
 #customers-main-section>#txtSearch-customers:focus {
     background-color: #e7e9e9;
-    border: 3px solid #717d79;
+    border: 3px solid #122620;
     box-shadow: none;
 }
 
@@ -206,9 +206,9 @@ table.table.table-bordered > tbody > tr > td {
     width: 212px;
     position: absolute;
     border-radius: 20px;
-    border-color: #717d79;
-    background-color: #122620;
-    color: #e7e9e9;
+    border:3px solid #122620;
+    background-color: #e7e9e9;
+    color: #122620;
     font-weight: 550;
     font-family: "Lexend", sans-serif;
     left: 282px;
@@ -216,7 +216,9 @@ table.table.table-bordered > tbody > tr > td {
 }
 
 #customers-content-card-left>button.btn.btn-primary:hover {
-    border: 3px solid rgba(255, 255, 255, 0.53);
+    /*border: 3px solid rgba(255, 255, 255, 0.53);*/
+    background-color: #122620;
+    color: #e7e9e9;
 }
 
 #customers-main-section>button.btn.btn-outline-primary {
@@ -281,7 +283,7 @@ table.table.table-bordered > tbody > tr > td {
     left: 70vw;
 }
 
-#totalCustomers > label {
+#totalCustomers-label {
     font-family: "Lexend", sans-serif;
     font-style: italic;
     font-size: 18px;

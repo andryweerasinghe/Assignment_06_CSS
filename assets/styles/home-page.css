@@ -44,17 +44,16 @@ footer>p {
 }
 
 #home-main-section {
-    width: 70vw;
-    height: 675px;
+    height: 453px;
     background-color: #e7e9e9;
     position: relative;
     text-align: center;
     left: 0;
     right: 0;
     margin: auto;
-    margin-right: 15px; /* Reset margin-right */
+    margin-right: 15px;
     border-radius: 30px;
-    padding: 20px; /* Add padding to prevent content from sticking to edges */
+    padding: 20px;
 }
 #home-main-section>label {
     font-size: x-large;
@@ -74,9 +73,8 @@ footer>p {
 }
 
 #card1,#card2,#card3,#card4 {
-    height: 140px;
+    height: 130px;
     position: relative;
-    border: 3px solid #717d79;
     background-color: #e7e9e9;
     border-radius: 20px;
     text-align: center;
@@ -96,23 +94,22 @@ footer>p {
 }
 
 #home-middle-card {
-    width: 300px;
-    height: 180px;
-    border: 3px solid #717d79;
+    width: 260px;
+    height: 150px;
     background-color: #e7e9e9;
     border-radius: 20px;
     position: absolute;
     text-align: center;
     top: 0;
     left: 0;
-    bottom: 0;
+    bottom: 217px;
     right: 0;
     margin: auto;
 }
 
 #cards-2 {
     position: relative;
-    margin-top: 360px;
+    margin-top: 174px;
 }
 
 label {
@@ -177,7 +174,7 @@ label {
 }
 
 #home-middle-card>label {
-    margin-top: 15px;
+    margin-top: -15px;
     font-size: 22px;
 }
 
