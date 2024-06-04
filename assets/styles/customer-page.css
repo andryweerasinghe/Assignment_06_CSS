@@ -449,6 +449,17 @@ table.table.table-bordered > tbody > tr > td {
         left: 17px;
     }
 
+    #count {
+        width: fit-content;
+        height: fit-content;
+        font-size: 22px;
+        position: absolute;
+        top: 120px;
+        right: 0;
+        left: 0;
+        margin: auto;
+    }
+
     #totalCustomers > img {
         position: absolute;
         top: 38px;
@@ -458,113 +469,113 @@ table.table.table-bordered > tbody > tr > td {
 
 @media all and (max-width: 764px) {
 
-    #container {
-        height: 100vh;
+    #customers-container {
+        height: 1000px;
     }
 
-    #main-section {
+    #customers-main-section{
         width: 96vw;
-        height: 96vh;
+        height: 960px;
     }
 
-    #Tbl {
+    #Tbl-customers {
         top: 650px;
     }
 
-    #main-section>#lblSearchOrders {
+    #customers-main-section>#lblSearchCustomers {
         font-size: 16px;
         left: 45px;
         top: 613px;
     }
 
-    #main-section>#txtSearch-03 {
+    #customers-main-section>#txtSearch-customers {
         width: 200px;
         background-position: 157px;
         left: 31px;
         top: 642px;
     }
 
-    #main-section>button.btn.btn-outline-primary {
+    #customers-main-section>button.btn.btn-outline-primary {
         width: 82px;
         height: 40px;
         left: 251px;
         top: 643px;
     }
 
-    #main-section>#btnUpdate {
+    #customers-main-section>#btnUpdate-customer {
         width: 90px;
         top: 642px;
         left: 55vw;
     }
 
-    #main-section>#btnDelete {
+    #customers-main-section>#btnDelete-customer {
         width: 90px;
         top: 642px;
         left: 68.2vw;
     }
 
-    #main-section>#btnClearAll {
+    #customers-main-section>#btnClearAll-customer {
         width: 97px;
         top: 642px;
         left: 81vw;
     }
 
-    #content-card-left {
+    #customers-content-card-left {
         width: 445px;
         left: 40px;
         top: 50px;
         height: 470px;
     }
 
-    #content-card-left>#txtPhoneNumber {
+    #customers-content-card-left>#txtPhoneNumber {
         width: 384px;
         position: absolute;
         left: 30px;
         top: 310px;
     }
 
-    #content-card-left>button.btn.btn-primary {
+    #customers-content-card-left>button.btn.btn-primary {
         width: 212px;
         left: 14vw;
         top: 383px;
     }
 
-    #content-card-left>#lblPhoneNumber {
+    #customers-content-card-left>#lblPhoneNumber {
         position: absolute;
         left: 45px;
         top: 280px;
     }
 
-    #content-card-left>#txtAddress {
+    #customers-content-card-left>#txtAddress {
         width: 384px;
         position: absolute;
         left: 30px;
         top: 200px;
     }
 
-    #content-card-left>#lblAddress {
+    #customers-content-card-left>#lblAddress {
         position: absolute;
         left: 47px;
         top: 170px;
     }
 
-    #content-card-left>#txtCustomerID {
+    #customers-content-card-left>#txtCustomerID {
         width: 158px;
         left: 30px;
         top: 80px;
     }
 
-    #content-card-left>#lblCustomerID {
+    #customers-content-card-left>#lblCustomerID {
         left: 44px;
         top: 50px;
     }
 
-    #content-card-left>#lblName {
+    #customers-content-card-left>#lblName {
         left: 243px;
         top: 50px;
     }
 
-    #content-card-left>#txtName {
+    #customers-content-card-left>#txtName {
         left: 222px;
         width: 190px;
     }
@@ -574,10 +585,21 @@ table.table.table-bordered > tbody > tr > td {
         width: 22vw;
     }
 
-    #totalCustomers > label {
+    #totalCustomers-label {
         font-size: 16px;
         top: 10px;
         left: 13px;
+    }
+
+    #count {
+        width: fit-content;
+        height: fit-content;
+        font-size: 22px;
+        position: absolute;
+        top: 120px;
+        right: 0;
+        left: 0;
+        margin: auto;
     }
 
     #totalCustomers > img {
