@@ -448,113 +448,113 @@ table.table.table-bordered > tbody > tr > td {
 
 @media all and (max-width: 764px) {
 
-    #container {
-        height: 100vh;
+    #items-container {
+        height: 1000px;
     }
 
-    #main-section {
+    #items-main-section{
         width: 96vw;
-        height: 96vh;
+        height: 960px;
     }
 
-    #Tbl {
+    #Tbl-items {
         top: 650px;
     }
 
-    #main-section>#lblSearchItems {
+    #items-main-section>#lblSearchItems {
         font-size: 16px;
         left: 45px;
         top: 613px;
     }
 
-    #main-section>#txtSearch-03 {
+    #items-main-section>#txtSearch-items {
         width: 200px;
         background-position: 157px;
         left: 31px;
         top: 642px;
     }
 
-    #main-section>button.btn.btn-outline-primary {
+    #items-main-section>button.btn.btn-outline-primary {
         width: 82px;
         height: 40px;
         left: 251px;
         top: 643px;
     }
 
-    #main-section>#btnUpdate {
+    #items-main-section>#btnUpdate-items {
         width: 90px;
         top: 642px;
         left: 55vw;
     }
 
-    #main-section>#btnDelete {
+    #items-main-section>#btnDelete-items {
         width: 90px;
         top: 642px;
         left: 68.2vw;
     }
 
-    #main-section>#btnClearAll {
+    #items-main-section>#btnClearAll-items {
         width: 97px;
         top: 642px;
         left: 81vw;
     }
 
-    #content-card-left {
+    #items-content-card-left {
         width: 445px;
         left: 40px;
         top: 50px;
         height: 470px;
     }
 
-    #content-card-left>#txtQuantity {
+    #items-content-card-left>#txtQuantity {
         width: 384px;
         position: absolute;
         left: 30px;
         top: 310px;
     }
 
-    #content-card-left>button.btn.btn-primary {
+    #items-content-card-left>button.btn.btn-primary {
         width: 212px;
         left: 14vw;
         top: 383px;
     }
 
-    #content-card-left>#lblQuantity {
+    #items-content-card-left>#lblQuantity {
         position: absolute;
         left: 45px;
         top: 280px;
     }
 
-    #content-card-left>#txtPrice {
+    #items-content-card-left>#txtPrice {
         width: 384px;
         position: absolute;
         left: 30px;
         top: 200px;
     }
 
-    #content-card-left>#lblPrice {
+    #items-content-card-left>#lblPrice {
         position: absolute;
         left: 47px;
         top: 170px;
     }
 
-    #content-card-left>#txtItemID {
+    #items-content-card-left>#txtItemID {
         width: 158px;
         left: 30px;
         top: 80px;
     }
 
-    #content-card-left>#lblItemID {
+    #items-content-card-left>#lblItemID {
         left: 44px;
         top: 50px;
     }
 
-    #content-card-left>#lblName {
+    #items-content-card-left>#lblItemName {
         left: 243px;
         top: 50px;
     }
 
-    #content-card-left>#txtName {
+    #items-content-card-left>#txtItemName {
         left: 222px;
         width: 190px;
     }
@@ -564,13 +564,13 @@ table.table.table-bordered > tbody > tr > td {
         width: 22vw;
     }
 
-    #totalCustomers > label {
+    #totalItems-label {
         font-size: 16px;
         top: 10px;
         left: 13px;
     }
 
-    #totalCustomers > img {
+    #totalItems > img {
         top: 38px;
         left: 52px;
     }
