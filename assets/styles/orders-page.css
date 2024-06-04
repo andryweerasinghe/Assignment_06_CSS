@@ -13,16 +13,7 @@ body {
     margin-right: 50px;
 }
 
-.current-page-button {
-    background-color: #717d79;
-    color: #e7e9e9;
-    padding: 18px 28px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: 1000;
-}
-
-.Home,
+.current-page-button,
 .Customers,
 .Items {
     display: inline-block;
@@ -53,9 +44,9 @@ footer>p {
     margin-bottom: 8px;
 }
 
-#main-section {
+#orders-main-section {
     width: 98vw;
-    height: 70vh;
+    height: 675px;
     background-color: #e7e9e9;
     position: relative;
     margin: auto;
