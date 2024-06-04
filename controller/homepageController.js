@@ -22,3 +22,20 @@ function updateTotalOrdersHome() {
     $('totalOrdersHome').text(total);
 }
 
+function updateTotalCustomersHome() {
+    var total = customers.length;
+    $('totalCustomersHome').text(total);
+}
+
+function updateTotalItemsHome() {
+    var total = customers.length;
+    $('totalItemsHome').text(total);
+}
+
+function updateTotalSales(){
+    let totalSales = 0;
+    orders.forEach(order => {
+        totalSales += order.amount;
+    });
+    $('#sales').text("Rs. " + totalSales + "/=");
+}
