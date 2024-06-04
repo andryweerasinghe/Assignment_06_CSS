@@ -419,13 +419,13 @@ table.table.table-bordered > tbody > tr > td {
     top: 240px;
 }
 
-#content-card-right>#lblOrderDate {
+#orders-content-card-right>#lblOrderDate {
     position: absolute;
     left: 240px;
     top: 210px;
 }
 
-#content-card-right>#txtOrderDate {
+#orders-content-card-right>#txtOrderDate {
     width: 165px;
     background-image:url('/assets/icons/icons8-calendar-week-100.png');
     background-repeat:no-repeat;
@@ -436,26 +436,26 @@ table.table.table-bordered > tbody > tr > td {
     top: 240px;
 }
 
-#content-card-left > #txtSearch-01:focus,
-#content-card-right > #txtSearch-02:focus,
-#content-card-left > #txtItemId:focus,
-#content-card-right > #txtOrderId:focus,
-#content-card-left > #txtItemName:focus,
-#content-card-right > #txtCustomerName:focus,
-#content-card-left > #txtUnitPrice:focus,
-#content-card-right > #txtCustomerId:focus,
-#content-card-left > #txtQtyOnHand:focus,
-#content-card-right > #txtPhoneNumber:focus,
-#content-card-left > #txtOrderQuantity:focus,
-#content-card-right > #txtOrderDate:focus,
-#main-section > #txtSearch-03:focus {
+#orders-content-card-left > #txtSearch-01:focus,
+#orders-content-card-right > #txtSearch-02:focus,
+#orders-content-card-left > #txtItemId-orders:focus,
+#orders-content-card-right > #txtOrderId:focus,
+#orders-content-card-left > #txtItemName-orders:focus,
+#orders-content-card-right > #txtCustomerName-orders:focus,
+#orders-content-card-left > #txtUnitPrice-orders:focus,
+#orders-content-card-right > #txtCustomerId-orders:focus,
+#orders-content-card-left > #txtQtyOnHand-orders:focus,
+#orders-content-card-right > #txtPhoneNumber-orders:focus,
+#orders-content-card-left > #txtOrderQuantity:focus,
+#orders-content-card-right > #txtOrderDate:focus,
+#orders-main-section > #txtSearch-03:focus {
     background-color: #e7e9e9;
     border: 3px solid #122620;
     box-shadow: none;
 }
 
 @media all and (max-width: 1440px) {
-    #content-card-left {
+    #orders-content-card-left {
         width: 40vw;
     }
 
