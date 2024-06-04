@@ -55,34 +55,34 @@ footer>p {
 
 #customers-main-section {
     width: 98vw;
-    height: 70vh;
+    height: 675px;
     background-color: #FFF4ED;
     margin: auto;
     border-radius: 30px;
     padding: 20px; /* Add padding to prevent content from sticking to edges */
 }
 
-#container {
+#customers-container {
     position: relative;
     padding-bottom: 47px; /* Height of the footer */
 }
 
-#content-card-left {
+#customers-content-card-left {
     width: 815px;
     height: 300px;
-    border: 3px solid #122620;
+    border: 3px solid #717d79;
     border-radius: 30px;
     position: absolute;
     left: 40px;
     top: 20px;
 }
 
-#Tbl {
+#Tbl-customers {
     position: relative;
     top: 400px;
 }
 table.table-bordered > thead > tr > th{
-    border:2px solid #122620;
+    border:2px solid #717d79;
     background-color: #e7e9e9;
     color: #122620;
     text-align: center;
@@ -97,16 +97,16 @@ table.table.table-bordered > tbody > tr > td {
     color: #122620;
 }
 
-#content-card-left > input,
-#main-section > input {
+#customers-content-card-left > input,
+#customers-main-section > input {
     width: 140px;
     height: 45px;
     background-color: #e7e9e9;
-    border: 2px solid #122620;
+    border: 2px solid #717d79;
     border-radius: 25px;
 }
 
-#content-card-left>label {
+#customers-content-card-left>label {
     font-family: "Lexend", sans-serif;
     font-style: italic;
     font-size: 18px;
@@ -198,7 +198,7 @@ table.table.table-bordered > tbody > tr > td {
 #content-card-left > #txtPhoneNumber:focus,
 #main-section>#txtSearch-03:focus {
     background-color: #e7e9e9;
-    border: 3px solid #122620;
+    border: 3px solid #717d79;
     box-shadow: none;
 }
 
@@ -206,7 +206,7 @@ table.table.table-bordered > tbody > tr > td {
     width: 212px;
     position: absolute;
     border-radius: 20px;
-    border-color: #122620;
+    border-color: #717d79;
     background-color: #122620;
     color: #e7e9e9;
     font-weight: 550;
