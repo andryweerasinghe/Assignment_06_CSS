@@ -149,7 +149,7 @@ table.table.table-bordered > tbody > tr > td {
     top: 50px;
 }
 
-#content-card-left>#txtAddress {
+#customers-content-card-left>#txtAddress {
     width: 215px;
     position: absolute;
     left: 545px;
