@@ -104,7 +104,7 @@ footer>p {
     top: 20px;
     right: 40px;
 }
-#Tbl {
+#Tbl-orders {
     position: relative;
     top: 400px;
 }
@@ -123,9 +123,9 @@ table.table.table-bordered > tbody > tr > td {
     color: #122620;
 }
 
-#content-card-left > input,
-#content-card-right > input,
-#main-section > input {
+#orders-content-card-left > input,
+#orders-content-card-right > input,
+#orders-main-section > input {
     width: 140px;
     height: 45px;
     background-color: #e7e9e9;
