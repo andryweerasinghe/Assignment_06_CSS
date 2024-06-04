@@ -223,9 +223,9 @@ table.table.table-bordered > tbody > tr > td {
     top: 393px;
 }
 
-#main-section>#btnUpdate,
-#main-section>#btnDelete,
-#main-section>#btnClearAll {
+#orders-main-section>#btnUpdate,
+#orders-main-section>#btnDelete,
+#orders-main-section>#btnClearAll {
     width: 112px;
     height: 40px;
     position: absolute;
@@ -236,22 +236,22 @@ table.table.table-bordered > tbody > tr > td {
     font-family: "Lexend", sans-serif;
 }
 
-#main-section>#btnUpdate {
+#orders-main-section>#btnUpdate {
     left: 70vw;
     top: 393px;
 }
 
-#main-section>#btnDelete {
+#orders-main-section>#btnDelete {
     left: 80vw;
     top: 393px;
 }
 
-#main-section>#btnClearAll {
+#orders-main-section>#btnClearAll {
     left: 90vw;
     top: 393px;
 }
 
-#content-card-left>button.btn.btn-primary {
+#orders-content-card-left>button.btn.btn-primary {
     width: 110px;
     position: absolute;
     border-radius: 20px;
