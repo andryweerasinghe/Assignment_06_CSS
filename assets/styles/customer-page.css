@@ -143,7 +143,7 @@ table.table.table-bordered > tbody > tr > td {
     top: 80px;
 }
 
-#content-card-left>#lblAddress {
+#customers-content-card-left>#lblAddress {
     position: absolute;
     left: 565px;
     top: 50px;
