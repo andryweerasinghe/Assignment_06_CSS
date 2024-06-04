@@ -136,7 +136,7 @@ table.table.table-bordered > tbody > tr > td {
     top: 50px;
 }
 
-#content-card-left>#txtName {
+#customers-content-card-left>#txtName {
     width: 215px;
     position: absolute;
     left: 263px;
