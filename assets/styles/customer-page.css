@@ -310,15 +310,15 @@ table.table.table-bordered > tbody > tr > td {
 }
 
 @media all and (max-width: 1440px) {
-    #main-section>#btnUpdate {
+    #customers-main-section>#btnUpdate-customer {
         left: 67vw;
     }
 
-    #main-section>#btnDelete {
+    #customers-main-section>#btnDelete-customer {
         left: 77vw;
     }
 
-    #main-section>#btnClearAll {
+    #customers-main-section>#btnClearAll-customer {
         left: 87vw;
     }
 }
@@ -329,15 +329,15 @@ table.table.table-bordered > tbody > tr > td {
         left: 73vw;
     }
 
-    #main-section>#btnUpdate {
+    #customers-main-section>#btnUpdate-customer {
         left: 67vw;
     }
 
-    #main-section>#btnDelete {
+    #customers-main-section>#btnDelete-customer {
         left: 77vw;
     }
 
-    #main-section>#btnClearAll {
+    #customers-main-section>#btnClearAll-customer {
         left: 87vw;
     }
 }
