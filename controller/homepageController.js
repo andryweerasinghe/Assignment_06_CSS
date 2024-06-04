@@ -16,3 +16,9 @@ $(document).ready(function(){
       cursor:'pointer',
    });
 });
+
+function updateTotalOrdersHome() {
+    var total = orders.length;
+    $('totalOrdersHome').text(total);
+}
+
