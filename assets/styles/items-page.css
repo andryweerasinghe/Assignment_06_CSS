@@ -156,20 +156,20 @@ table.table.table-bordered > tbody > tr > td {
     top: 80px;
 }
 
-#content-card-left>#lblQuantity {
+#items-content-card-left>#lblQuantity {
     position: absolute;
     left: 45px;
     top: 190px;
 }
 
-#content-card-left>#txtQuantity {
+#items-content-card-left>#txtQuantity {
     width: 215px;
     position: absolute;
     left: 30px;
     top: 220px;
 }
 
-#main-section>#lblSearchItems {
+#items-main-section>#lblSearchItems {
     font-family: "Lexend", sans-serif;
     font-style: italic;
     font-size: 17px;
@@ -180,7 +180,7 @@ table.table.table-bordered > tbody > tr > td {
     top: 366px;
 }
 
-#main-section>#txtSearch-03 {
+#items-main-section>#txtSearch-items {
     width: 305px;
     height: 39px;
     position: absolute;
@@ -192,7 +192,7 @@ table.table.table-bordered > tbody > tr > td {
     top: 394px;
 }
 
-#main-section>button.btn.btn-outline-primary {
+#items-main-section>button.btn.btn-outline-primary {
     width: 112px;
     height: 40px;
     position: absolute;
@@ -205,22 +205,22 @@ table.table.table-bordered > tbody > tr > td {
     top: 393px;
 }
 
-#main-section>#btnUpdate {
+#items-main-section>#btnUpdate-items {
     left: 70vw;
     top: 393px;
 }
 
-#main-section>#btnDelete {
+#items-main-section>#btnDelete-items {
     left: 80vw;
     top: 393px;
 }
 
-#main-section>#btnClearAll {
+#items-main-section>#btnClearAll-items {
     left: 90vw;
     top: 393px;
 }
 
-#content-card-left>button.btn.btn-primary {
+#items-content-card-left>button.btn.btn-primary {
     width: 212px;
     position: absolute;
     border-radius: 20px;
@@ -233,24 +233,24 @@ table.table.table-bordered > tbody > tr > td {
     top: 223px;
 }
 
-#content-card-left>button.btn.btn-primary:hover {
+#items-content-card-left>button.btn.btn-primary:hover {
     border: 3px solid rgba(255, 255, 255, 0.53);
 }
 
-#content-card-left > #txtItemID:focus,
-#content-card-left > #txtName:focus,
-#content-card-left > #txtPrice:focus,
-#content-card-left > #txtQuantity:focus,
-#main-section>#txtSearch-03:focus {
+#items-content-card-left > #txtItemID:focus,
+#items-content-card-left > #txtItemName:focus,
+#items-content-card-left > #txtPrice:focus,
+#items-content-card-left > #txtQuantity:focus,
+#items-main-section>#txtSearch-items:focus {
     background-color: #e7e9e9;
     border: 3px solid #122620;
     box-shadow: none;
 }
 
-#main-section>button.btn.btn-outline-primary:hover,
-#main-section>#btnUpdate:hover,
-#main-section>#btnDelete:hover,
-#main-section>#btnClearAll:hover {
+#items-main-section>button.btn.btn-outline-primary:hover,
+#items-main-section>#btnUpdate-items:hover,
+#items-main-section>#btnDelete-items:hover,
+#items-main-section>#btnClearAll-items:hover {
     background-color: #122620;
     color: #e7e9e9;
     font-weight: 550;
@@ -268,7 +268,7 @@ table.table.table-bordered > tbody > tr > td {
     left: 70vw;
 }
 
-#totalItems > label {
+#totalItems-label {
     font-family: "Lexend", sans-serif;
     font-style: italic;
     font-size: 18px;
@@ -277,6 +277,17 @@ table.table.table-bordered > tbody > tr > td {
     position: absolute;
     top: 10px;
     left: 70px;
+}
+
+#count-items {
+    width: fit-content;
+    height: fit-content;
+    font-size: 22px;
+    position: absolute;
+    top: 120px;
+    right: 0;
+    left: 0;
+    margin: auto;
 }
 
 #totalItems > img {
