@@ -424,10 +424,14 @@ table.table.table-bordered > tbody > tr > td {
         width: 19vw;
     }
 
-    #totalItems > label {
+    #totalItems-label {
+        width: fit-content;
+        height: fit-content;
         font-size: 18px;
         top: 10px;
-        left: 17px;
+        left: 0;
+        right: 0;
+        margin: auto;
     }
 
     #totalItems > img {
@@ -436,7 +440,7 @@ table.table.table-bordered > tbody > tr > td {
         left: 60px;
     }
 
-    #main-section>#btnClearAll {
+    #items-main-section>#btnClearAll-items {
         left: 83vw;
         width: 100px;
     }
