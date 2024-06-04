@@ -459,32 +459,32 @@ table.table.table-bordered > tbody > tr > td {
         width: 40vw;
     }
 
-    #content-card-left > #txtSearch-01,
-    #content-card-right > #txtSearch-02 {
+    #orders-content-card-left > #txtSearch-01,
+    #orders-content-card-right > #txtSearch-0 {
         width: 300px;
         height: 45px;
         background-position:250px;
     }
 
-    #content-card-left > #txtItemName,
-    #content-card-right > #txtCustomerName {
+    #orders-content-card-left > #txtItemName-orders,
+    #orders-content-card-right > #txtCustomerName-orders {
         width: 180px;
     }
 
-    #content-card-left > #txtUnitPrice {
+    #orders-content-card-left > #txtUnitPrice-orders {
         left: 410px;
     }
 
-    #content-card-left > #lblUnitPrice {
+    #orders-content-card-left > #lblUnitPrice-orders {
         left: 425px;
     }
 
-    #content-card-left > #txtItemId,
-    #content-card-right > #txtOrderId {
+    #orders-content-card-left > #txtItemId-orders,
+    #orders-content-card-right > #txtOrderId {
         width: 120px;
     }
 
-    #content-card-right {
+    #orders-content-card-right {
         width: 40vw;
     }
 
