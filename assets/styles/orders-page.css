@@ -133,8 +133,8 @@ table.table.table-bordered > tbody > tr > td {
     border-radius: 25px;
 }
 
-#content-card-left > #txtSearch-01,
-#content-card-right > #txtSearch-02 {
+#orders-content-card-left > #txtSearch-01,
+#orders-content-card-right > #txtSearch-02 {
     width: 356px;
     height: 45px;
     position: absolute;
@@ -146,7 +146,7 @@ table.table.table-bordered > tbody > tr > td {
     top: 40px;
 }
 
-#main-section>#txtSearch-03 {
+#orders-main-section>#txtSearch-03 {
     width: 305px;
     height: 39px;
     position: absolute;
@@ -158,8 +158,8 @@ table.table.table-bordered > tbody > tr > td {
     top: 394px;
 }
 
-#content-card-left>label,
-#content-card-right>label {
+#orders-content-card-left>label,
+#orders-content-card-right>label {
     font-family: "Lexend", sans-serif;
     font-style: italic;
     font-size: 18px;
@@ -170,7 +170,7 @@ table.table.table-bordered > tbody > tr > td {
     top: 10px;
 }
 
-#main-section>#lblSearchOrders {
+#orders-main-section>#lblSearchOrders {
     font-family: "Lexend", sans-serif;
     font-style: italic;
     font-size: 17px;
@@ -181,19 +181,24 @@ table.table.table-bordered > tbody > tr > td {
     top: 366px;
 }
 
-#main-section>#lblTotalPrice {
+#orders-main-section>#lblTotalPrice {
+    width: fit-content;
+    height: fit-content;
     font-family: "Lexend", sans-serif;
     font-style: italic;
     font-size: 22px;
     font-weight: 750;
     color: #122620;
     position: absolute;
-    left: 45.7vw;
-    top: 27vh;
+    left: 0;
+    top: 0;
+    bottom: 110px;
+    right: 0;
+    margin: auto;
 }
 
-#content-card-left>button.btn.btn-outline-primary,
-#content-card-right>button.btn.btn-outline-primary {
+#orders-content-card-left>button.btn.btn-outline-primary,
+#orders-content-card-right>button.btn.btn-outline-primary {
     width: 90px;
     position: absolute;
     border-radius: 20px;
@@ -205,7 +210,7 @@ table.table.table-bordered > tbody > tr > td {
     top: 43px;
 }
 
-#main-section>button.btn.btn-outline-primary {
+#orders-main-section>button.btn.btn-outline-primary {
     width: 112px;
     height: 40px;
     position: absolute;
