@@ -297,15 +297,15 @@ table.table.table-bordered > tbody > tr > td {
 }
 
 @media all and (max-width: 1440px) {
-    #main-section>#btnUpdate {
+    #items-main-section>#btnUpdate-items {
         left: 67vw;
     }
 
-    #main-section>#btnDelete {
+    #items-main-section>#btnDelete-items {
         left: 77vw;
     }
 
-    #main-section>#btnClearAll {
+    #items-main-section>#btnClearAll-items {
         left: 87vw;
     }
 }
