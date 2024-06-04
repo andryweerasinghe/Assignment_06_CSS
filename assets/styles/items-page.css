@@ -62,12 +62,12 @@ footer>p {
     padding: 20px; /* Add padding to prevent content from sticking to edges */
 }
 
-#container {
+#items-container {
     position: relative;
     padding-bottom: 47px; /* Height of the footer */
 }
 
-#content-card-left {
+#items-content-card-left {
     width: 815px;
     height: 300px;
     border: 3px solid #122620;
@@ -77,7 +77,7 @@ footer>p {
     top: 20px;
 }
 
-#Tbl {
+#Tbl-items {
     position: relative;
     top: 400px;
 }
@@ -97,8 +97,8 @@ table.table.table-bordered > tbody > tr > td {
     color: #122620;
 }
 
-#content-card-left > input,
-#main-section > input {
+#items-content-card-left > input,
+#items-main-section> input {
     width: 140px;
     height: 45px;
     background-color: #e7e9e9;
@@ -106,7 +106,7 @@ table.table.table-bordered > tbody > tr > td {
     border-radius: 25px;
 }
 
-#content-card-left>label {
+#items-content-card-left>label {
     font-family: "Lexend", sans-serif;
     font-style: italic;
     font-size: 18px;
@@ -117,39 +117,39 @@ table.table.table-bordered > tbody > tr > td {
     top: 10px;
 }
 
-#content-card-left>#lblItemID {
+#items-content-card-left>#lblItemID {
     position: absolute;
     left: 45px;
     top: 50px;
 }
 
-#content-card-left>#txtItemID {
+#items-content-card-left>#txtItemID {
     width: 170px;
     position: absolute;
     left: 30px;
     top: 80px;
 }
 
-#content-card-left>#lblName {
+#items-content-card-left>#lblItemName {
     position: absolute;
     left: 283px;
     top: 50px;
 }
 
-#content-card-left>#txtName {
+#items-content-card-left>#txtItemName {
     width: 255px;
     position: absolute;
     left: 263px;
     top: 80px;
 }
 
-#content-card-left>#lblPrice {
+#items-content-card-left>#lblPrice {
     position: absolute;
     left: 615px;
     top: 50px;
 }
 
-#content-card-left>#txtPrice {
+#items-content-card-left>#txtPrice {
     width: 145px;
     position: absolute;
     left: 595px;
