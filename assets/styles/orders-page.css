@@ -876,139 +876,139 @@ table.table.table-bordered > tbody > tr > td {
 
 @media all and (max-width: 764px) {
 
-    #content-card-left {
+    #orders-content-card-left {
         left: 20px;
-        top: 4vh;
+        top: 40px;
         width: 90vw;
     }
 
-    #content-card-left > #txtSearch-01,
-    #content-card-right > #txtSearch-02 {
+    #orders-content-card-left > #txtSearch-01,
+    #orders-content-card-right > #txtSearch-02 {
         width: 264px;
         height: 45px;
         background-position: 216px;
     }
 
-    #content-card-left>button.btn.btn-outline-primary,
-    #content-card-right>button.btn.btn-outline-primary {
+    #orders-content-card-left>button.btn.btn-outline-primary,
+    #orders-content-card-right>button.btn.btn-outline-primary {
         left: 308px;
     }
 
-    #content-card-left>#lblItemName {
+    #orders-content-card-left>#lblItemName-orders {
         width: 270px;
         position: absolute;
         left: 248px;
     }
 
-    #content-card-left > #txtItemName {
+    #orders-content-card-left > #txtItemName-orders {
         left: 227px;
         width: 245px;
     }
 
-    #content-card-left>#lblUnitPrice {
+    #orders-content-card-left>#lblUnitPrice-orders {
         position: absolute;
         left: 548px;
         top: 110px;
     }
 
-    #content-card-left>#txtUnitPrice {
+    #orders-content-card-left>#txtUnitPrice-orders {
         position: absolute;
         left: 526px;
         top: 140px;
     }
 
-    #content-card-left>#lblOrderQuantity {
+    #orders-content-card-left>#lblOrderQuantity {
         position: absolute;
         left: 240px;
         top: 210px;
     }
 
-    #content-card-left>#txtOrderQuantity {
+    #orders-content-card-left>#txtOrderQuantity {
         position: absolute;
         left: 227px;
     }
 
-    #content-card-left>button.btn.btn-primary {
+    #orders-content-card-left>button.btn.btn-primary {
         width: 115px;
         left: 440px;
         top: 244px;
     }
 
-    #content-card-left>#btnClear-1 {
+    #orders-content-card-left>#btnClear-1 {
         width: 80px;
         left: 575px;
         top: 241px;
     }
 
-    #content-card-right>#txtCustomerId {
+    #orders-content-card-right>#txtCustomerId-orders {
         left: 218px;
     }
 
-    #content-card-right>#lblCustomerID {
+    #orders-content-card-right>#lblCustomerID-orders {
         left: 238px;
     }
 
-    #content-card-right > #lblCustomerName {
+    #orders-content-card-right > #lblCustomerName-orders {
         left: 432px;
     }
 
-    #content-card-right > #txtCustomerName {
+    #orders-content-card-right > #txtCustomerName-orders {
         left: 417px;
         width: 238px;
     }
 
-    #content-card-right>#txtPhoneNumber {
+    #orders-content-card-right>#txtPhoneNumber-orders {
         width: 174px;
     }
 
-    #content-card-right>#txtOrderDate {
+    #orders-content-card-right>#txtOrderDate {
         width: 175px;
         background-position: 130px;
         left: 226px;
     }
 
-    #content-card-right>#lblOrderDate {
+    #orders-content-card-right>#lblOrderDate {
         left: 239px;
     }
 
-    #content-card-right>button.btn.btn-primary {
+    #orders-content-card-right>button.btn.btn-primary {
         width: 125px;
         left: 435px;
         top: 244px;
     }
 
-    #content-card-right>#btnClear-2 {
+    #orders-content-card-right>#btnClear-2 {
         width: 80px;
         left: 581px;
         top: 241px;
     }
 
-    #main-section>#txtSearch-03 {
+    #orders-main-section>#txtSearch-03 {
         width: 200px;
         background-position: 157px;
         left: 18px;
         top: 872px;
     }
 
-    #main-section>button.btn.btn-outline-primary {
+    #orders-main-section>button.btn.btn-outline-primary {
         width: 81px;
         left: 237px;
         top: 872px;
     }
 
-    #main-section>#btnUpdate {
+    #orders-main-section>#btnUpdate {
         width: 90px;
         top: 872px;
         left: 55vw;
     }
 
-    #main-section>#btnDelete {
+    #orders-main-section>#btnDelete {
         width: 90px;
         top: 872px;
         left: 68.2vw;
     }
 
-    #main-section>#btnClearAll {
+    #orders-main-section>#btnClearAll {
         width: 97px;
         top: 872px;
         left: 81vw;
