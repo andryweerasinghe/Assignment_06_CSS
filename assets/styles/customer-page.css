@@ -372,66 +372,66 @@ table.table.table-bordered > tbody > tr > td {
         left: 72px;
     }
 
-    #content-card-left {
+    #customers-content-card-left {
         width: 675px;
         left: 40px;
         top: 20px;
     }
 
-    #content-card-left>#lblCustomerID {
+    #customers-content-card-left>#lblCustomerID {
         position: absolute;
         left: 30px;
         top: 50px;
     }
 
-    #content-card-left>#txtCustomerID {
+    #customers-content-card-left>#txtCustomerID {
         width: 158px;
         left: 18px;
         top: 80px;
     }
 
-    #content-card-left>#lblName {
+    #customers-content-card-left>#lblName {
         position: absolute;
         left: 223px;
         top: 50px;
     }
 
-    #content-card-left>#txtName {
+    #customers-content-card-left>#txtName {
         width: 211px;
         position: absolute;
         left: 205px;
         top: 80px;
     }
 
-    #content-card-left>#lblAddress {
+    #customers-content-card-left>#lblAddress {
         position: absolute;
         left: 463px;
         top: 50px;
     }
 
-    #content-card-left>#txtAddress {
+    #customers-content-card-left>#txtAddress {
         width: 205px;
         position: absolute;
         left: 447px;
         top: 80px;
     }
 
-    #main-section>button.btn.btn-outline-primary {
+    #customers-main-section>button.btn.btn-outline-primary {
         width: 86px;
         height: 40px;
         left: 352px;
         top: 393px;
     }
 
-    #main-section>#btnUpdate {
+    #customers-main-section>#btnUpdate-customer {
         left: 60vw;
     }
 
-    #main-section>#btnDelete {
+    #customers-main-section>#btnDelete-customer {
         left: 72vw;
     }
 
-    #main-section>#btnClearAll {
+    #customers-main-section>#btnClearAll-customer {
         left: 84vw;
     }
 }
