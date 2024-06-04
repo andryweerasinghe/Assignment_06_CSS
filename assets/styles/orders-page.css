@@ -301,80 +301,80 @@ table.table.table-bordered > tbody > tr > td {
     top: 244px;
 }
 
-#content-card-left>button.btn.btn-primary:hover,
-#content-card-right>button.btn.btn-primary:hover {
+#orders-content-card-left>button.btn.btn-primary:hover,
+#orders-content-card-right>button.btn.btn-primary:hover {
     border: 3px solid rgba(255, 255, 255, 0.53);
 }
 
-#content-card-left>#btnClear-1:hover,
-#content-card-right>#btnClear-2:hover,
-#content-card-left>button.btn.btn-outline-primary:hover,
-#content-card-right>button.btn.btn-outline-primary:hover,
-#main-section>button.btn.btn-outline-primary:hover,
-#main-section>#btnUpdate:hover,
-#main-section>#btnDelete:hover,
-#main-section>#btnClearAll:hover {
+#orders-content-card-left>#btnClear-1:hover,
+#orders-content-card-right>#btnClear-2:hover,
+#orders-content-card-left>button.btn.btn-outline-primary:hover,
+#orders-content-card-right>button.btn.btn-outline-primary:hover,
+#orders-main-section>button.btn.btn-outline-primary:hover,
+#orders-main-section>#btnUpdate:hover,
+#orders-main-section>#btnDelete:hover,
+#orders-main-section>#btnClearAll:hover {
     background-color: #122620;
     color: #e7e9e9;
     font-weight: 550;
     font-family: "Lexend", sans-serif;
 }
 
-#content-card-left>#lblItemID,
-#content-card-right>#lblOrderID {
+#orders-content-card-left>#lblItemID-orders,
+#orders-content-card-right>#lblOrderID {
     position: absolute;
     left: 30px;
     top: 110px;
 }
 
-#content-card-left>#txtItemId,
-#content-card-right>#txtOrderId {
+#orders-content-card-left>#txtItemId-orders,
+#orders-content-card-right>#txtOrderId {
     position: absolute;
     left: 18px;
     top: 140px;
 }
 
-#content-card-left>#lblQtyOnHand,
-#content-card-right>#lblPhoneNumber {
+#orders-content-card-left>#lblQtyOnHand-orders,
+#orders-content-card-right>#lblPhoneNumber-orders {
     position: absolute;
     left: 30px;
     top: 210px;
 }
 
-#content-card-left>#txtQtyOnHand {
+#orders-content-card-left>#txtQtyOnHand-orders {
     width: 150px;
     position: absolute;
     left: 18px;
     top: 240px;
 }
 
-#content-card-right>#txtPhoneNumber {
+#orders-content-card-right>#txtPhoneNumber-orders {
     width: 180px;
     position: absolute;
     left: 18px;
     top: 240px;
 }
 
-#content-card-right>#lblCustomerID {
+#orders-content-card-right>#lblCustomerID-orders {
     position: absolute;
     left: 200px;
     top: 110px;
 }
 
-#content-card-right>#txtCustomerId {
+#orders-content-card-right>#txtCustomerId-orders {
     width: 145px;
     position: absolute;
     left: 188px;
     top: 140px;
 }
 
-#content-card-left>#lblItemName {
+#orders-content-card-left>#lblItemName-orders {
     position: absolute;
     left: 200px;
     top: 110px;
 }
 
-#content-card-left>#txtItemName {
+#orders-content-card-left>#txtItemName-orders {
     width: 250px;
     position: absolute;
     left: 188px;
