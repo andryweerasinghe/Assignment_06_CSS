@@ -88,4 +88,33 @@ $('nav-home-section').on('click', function(){
     applyingHoverEffect(orders);
     applyingHoverEffect(customers);
     applyingHoverEffect(items);
-})
+
+    // The below hover function is used to keep the home button as same it is without getting overridden by the above functions
+    $(home).hover(function (){
+        $(this).css({
+            background: '#B05200',
+            color: '#FEE5D4'
+        });
+    });
+    loadOrderTableHome();
+    updateTotalCustomersHome();
+    updateTotalItemsHome();
+    updateTotalSales();
+    updateTotalOrdersHome();
+});
+
+function loadOrderTableHome(){
+    $('#orders-summary').empty();
+
+    orders.map((item, index) => {
+        var orderRecord = `<tr>
+            <td class="o-id">${item.orderID}</td>
+            <td class="o-itemID">${item.itemID}</td>
+            <td class="o-itemName">${item.ItemName}</td>
+            <td class="o-qty">${item.orderQty}</td>
+            <td class="o-order-date">${item.orderDate}</td>
+            <td class="o-totalPrice">${item.totalPrice}</td>
+        </tr>`
+        $('#orders-summary').append(orderRecord);
+    });
+}
