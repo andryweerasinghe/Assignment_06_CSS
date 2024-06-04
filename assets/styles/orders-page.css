@@ -524,7 +524,7 @@ table.table.table-bordered > tbody > tr > td {
         left: 486px;
     }
 
-    #main-section>#lblTotalPrice {
+    #orders-main-section>#lblTotalPrice {
         font-size: 21px;
         left: 45vw;
         top: 29vh;
@@ -539,15 +539,15 @@ table.table.table-bordered > tbody > tr > td {
         margin: auto;
     }
 
-    #main-section>#btnUpdate {
+    #orders-main-section>#btnUpdate {
         left: 67vw;
     }
 
-    #main-section>#btnDelete {
+    #orders-main-section>#btnDelete {
         left: 77vw;
     }
 
-    #main-section>#btnClearAll {
+    #orders-main-section>#btnClearAll {
         left: 87vw;
     }
 }
