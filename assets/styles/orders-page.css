@@ -264,7 +264,7 @@ table.table.table-bordered > tbody > tr > td {
     top: 244px;
 }
 
-#content-card-left>#btnClear-1 {
+#orders-content-card-left>#btnClear-1 {
     width: 90px;
     position: absolute;
     border-radius: 20px;
@@ -276,7 +276,7 @@ table.table.table-bordered > tbody > tr > td {
     top: 241px;
 }
 
-#content-card-right>#btnClear-2 {
+#orders-content-card-left>#btnClear-2 {
     width: 90px;
     position: absolute;
     border-radius: 20px;
@@ -288,7 +288,7 @@ table.table.table-bordered > tbody > tr > td {
     top: 241px;
 }
 
-#content-card-right>button.btn.btn-primary {
+#orders-content-card-left>button.btn.btn-primary {
     width: 130px;
     position: absolute;
     border-radius: 20px;
