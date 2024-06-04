@@ -381,20 +381,20 @@ table.table.table-bordered > tbody > tr > td {
     top: 140px;
 }
 
-#content-card-right>#lblCustomerName {
+#orders-content-card-right>#lblCustomerName-orders {
     position: absolute;
     left: 380px;
     top: 110px;
 }
 
-#content-card-right>#txtCustomerName {
+#orders-content-card-right>#txtCustomerName-orders {
     width: 250px;
     position: absolute;
     left: 370px;
     top: 140px;
 }
 
-#content-card-left>#lblUnitPrice {
+#orders-content-card-left>#lblUnitPrice-orders {
     position: absolute;
     left: 490px;
     top: 110px;
