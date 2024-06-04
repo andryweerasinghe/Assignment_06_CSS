@@ -1175,89 +1175,89 @@ table.table.table-bordered > tbody > tr > td {
 
 @media all and (max-width: 425px) {
 
-    #container {
-        height: 190vh;
+    #orders-container {
+        height: 1900px;
         position: relative;
         padding-bottom: 47px;
     }
 
-    #content-card-right {
-        height: 56vh;
-        top: 70vh;
+    #orders-content-card-right {
+        height: 560px;
+        top: 660px;
         left: 8px;
         width: 90vw;
     }
 
-    #content-card-left {
-        height: 56vh;
+    #orders-content-card-left {
+        height: 560px;
         left: 8px;
-        top: 6vh;
+        top: 60px;
         width: 90vw;
     }
 
-    #main-section {
+    #orders-main-section {
         width: 94vw;
-        height: 188vh;
+        height: 1880px;
     }
 
-    #Tbl {
+    #Tbl-orders {
         position: relative;
-        top: 1522px;
+        top: 1592px;
     }
 
-    #main-section>#txtSearch-03 {
+    #orders-main-section>#txtSearch-03 {
         width: 158px;
         background-position: 116px;
         left: 18px;
-        top: 1514px;
+        top: 1584px;
     }
 
-    #main-section>#lblSearchOrders {
+    #orders-main-section>#lblSearchOrders {
         position: absolute;
         left: 30px;
-        top: 1484px;
+        top: 1556px;
     }
 
-    #main-section>button.btn.btn-outline-primary {
+    #orders-main-section>button.btn.btn-outline-primary {
         width: 81px;
         left: 208px;
-        top: 1513px;
+        top: 1582px;
     }
 
-    #content-card-left > #txtSearch-01,
-    #content-card-right > #txtSearch-02 {
+    #orders-content-card-left > #txtSearch-01,
+    #orders-content-card-right > #txtSearch-02 {
         width: 217px;
         height: 45px;
         background-position: 174px;
     }
 
-    #content-card-left>button.btn.btn-outline-primary,
-    #content-card-right>button.btn.btn-outline-primary {
+    #orders-content-card-left>button.btn.btn-outline-primary,
+    #orders-content-card-right>button.btn.btn-outline-primary {
         left: 262px;
     }
 
-    #main-section>#btnUpdate {
+    #orders-main-section>#btnUpdate {
         width: 88px;
         top: 1260px;
-        left: 3vw;
+        left: 9vw;
     }
 
-    #main-section>#btnDelete {
+    #orders-main-section>#btnDelete {
         width: 90px;
         top: 1260px;
-        left: 27.2vw;
+        left: 35.2vw;
     }
 
-    #main-section>#btnClearAll {
+    #orders-main-section>#btnClearAll {
         width: 97px;
         top: 1260px;
-        left: 52vw;
+        left: 62vw;
     }
 
-    #main-section>#lblTotalPrice {
+    #orders-main-section>#lblTotalPrice {
         font-size: 17px;
-        left: 39vw;
-        top: 138vh;
+        left: 6vw;
+        top: 1015px;
     }
 
     #total-price {
@@ -1265,115 +1265,115 @@ table.table.table-bordered > tbody > tr > td {
         height: 72px;
         position: absolute;
         left: 27px;
-        top: 980px;
+        top: 1000px;
         bottom: 0;
         right: 0;
         margin: auto;
     }
 
-    #content-card-left>#txtUnitPrice {
+    #orders-content-card-left>#txtUnitPrice-orders {
         width: 340px;
         left: 18px;
         top: 405px;
     }
 
-    #content-card-left>#lblUnitPrice {
+    #orders-content-card-left>#lblUnitPrice-orders {
         position: absolute;
         left: 33px;
         top: 376px;
     }
 
-    #content-card-left>button.btn.btn-primary {
+    #orders-content-card-left>button.btn.btn-primary {
         width: 115px;
         left: 21px;
         top: 469px;
     }
 
-    #content-card-left>#btnClear-1 {
+    #orders-content-card-left>#btnClear-1 {
         width: 80px;
         left: 165px;
         top: 464px;
     }
 
-    #content-card-right>button.btn.btn-primary {
+    #orders-content-card-right>button.btn.btn-primary {
         width: 125px;
         left: 18px;
         top: 478px;
     }
 
-    #content-card-right>#btnClear-2 {
+    #orders-content-card-right>#btnClear-2 {
         width: 80px;
         left: 181px;
         top: 474px;
     }
 
-    #content-card-right > #txtCustomerName {
+    #orders-content-card-right > #txtCustomerName-orders {
         top: 327px;
         left: 18px;
         width: 342px;
     }
 
-    #content-card-right > #lblCustomerName {
+    #orders-content-card-right > #lblCustomerName-orders {
         top: 295px;
         left: 30px;
     }
 
-    #content-card-right>#lblOrderDate {
+    #orders-content-card-right>#lblOrderDate {
         top: 385px;
         left: 29px;
     }
 
-    #content-card-right>#txtOrderDate {
+    #orders-content-card-right>#txtOrderDate {
         top: 415px;
         width: 347px;
         background-position: 300px;
         left: 16px;
     }
 
-    #content-card-right>#txtPhoneNumber {
+    #orders-content-card-right>#txtPhoneNumber-orders {
         width: 339px;
     }
 
-    #content-card-right>#txtCustomerId {
+    #orders-content-card-right>#txtCustomerId-orders {
         left: 202px;
     }
 
-    #content-card-right>#lblCustomerID {
+    #orders-content-card-right>#lblCustomerID-orders {
         left: 216px;
     }
 
-    #content-card-left>#txtOrderQuantity {
+    #orders-content-card-left>#txtOrderQuantity {
         width: 340px;
         top: 320px;
         left: 18px;
     }
 
-    #content-card-left>#lblOrderQuantity {
+    #orders-content-card-left>#lblOrderQuantity {
         left: 30px;
         top: 290px;
     }
 
-    #content-card-left>#txtQtyOnHand {
+    #orders-content-card-left>#txtQtyOnHand-orders {
         width: 340px;
         left: 18px;
         top: 230px;
     }
 
-    #content-card-left>#lblQtyOnHand {
+    #orders-content-card-left>#lblQtyOnHand-orders {
         left: 30px;
         top: 200px;
     }
 
-    #content-card-left > #txtItemId {
+    #orders-content-card-left > #txtItemId-orders {
         width: 130px;
     }
 
-    #content-card-left>#lblItemName {
+    #orders-content-card-left>#lblItemName-orders {
         width: 113px;
         left: 188px;
     }
 
-    #content-card-left > #txtItemName {
+    #orders-content-card-left > #txtItemName-orders {
         left: 167px;
         width: 192px;
     }
