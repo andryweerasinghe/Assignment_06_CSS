@@ -671,10 +671,20 @@ table.table.table-bordered > tbody > tr > td {
 
 @media all and (max-width: 425px) {
 
-    #totalItems > label {
+    #totalItems {
+        top: 20px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 52vw;
+    }
+
+    #totalItems-label {
         font-size: 16px;
         top: 10px;
-        left: 61px;
+        left: 0;
+        right: 0;
+        margin: auto;
     }
 
     #totalItems > img {
@@ -682,114 +692,118 @@ table.table.table-bordered > tbody > tr > td {
         left: 81px;
     }
 
-    #content-card-left {
+    #items-content-card-left {
         width: 355px;
-        left: 29px;
+        left: 0;
+        right: 0;
+        margin: auto;
         top: 210px;
         height: 520px;
     }
 
-    #container {
-        height: 130vh;
+    #items-container {
+        height: 1300px;
     }
 
-    #main-section {
+    #items-main-section{
         width: 96vw;
-        height: 126vh;
+        height: 1260px;
     }
 
-    #Tbl {
+    #Tbl-items {
         top: 920px;
     }
 
-    #main-section>#txtSearch-03 {
+    #items-main-section>#txtSearch-items {
         width: 200px;
         background-position: 157px;
         left: 23px;
         top: 912px;
     }
 
-    #main-section>#lblSearchItems {
+    #items-main-section>#lblSearchItems {
         font-size: 15px;
         left: 36px;
         top: 885px;
     }
 
-    #main-section>button.btn.btn-outline-primary {
+    #items-main-section>button.btn.btn-outline-primary {
         width: 82px;
         height: 40px;
         left: 251px;
         top: 909px;
     }
 
-    #main-section>#btnUpdate {
+    #items-main-section>#btnUpdate-items {
         width: 90px;
         top: 782px;
         left: 15vw;
     }
 
-    #main-section>#btnDelete {
+    #items-main-section>#btnDelete-items {
         width: 90px;
         top: 782px;
         left: 38.2vw;
     }
 
-    #main-section>#btnClearAll {
+    #items-main-section>#btnClearAll-items {
         width: 97px;
         top: 782px;
         left: 61vw;
     }
 
-    #content-card-left>button.btn.btn-primary {
+    #items-content-card-left>button.btn.btn-primary {
         width: 212px;
-        left: 16vw;
+        left: 0;
+        right: 0;
+        margin: auto;
         top: 443px;
     }
 
-    #content-card-left>#txtQuantity {
+    #items-content-card-left>#txtQuantity {
         width: 294px;
         position: absolute;
         left: 30px;
         top: 370px;
     }
 
-    #content-card-left>#lblQuantity {
+    #items-content-card-left>#lblQuantity {
         position: absolute;
         left: 45px;
         top: 340px;
     }
 
-    #content-card-left>#txtPrice {
+    #items-content-card-left>#txtPrice {
         width: 294px;
         position: absolute;
         left: 30px;
         top: 270px;
     }
 
-    #content-card-left>#lblPrice {
+    #items-content-card-left>#lblPrice {
         position: absolute;
         left: 47px;
         top: 240px;
     }
 
-    #content-card-left>#txtName {
+    #items-content-card-left>#txtItemName {
         left: 31px;
         width: 294px;
         top: 170px;
     }
 
-    #content-card-left>#lblName {
+    #items-content-card-left>#lblItemName {
         left: 53px;
         top: 140px;
     }
 
-    #content-card-left>#txtItemID {
+    #items-content-card-left>#txtItemID {
         width: 178px;
         left: 81px;
         top: 70px;
     }
 
-    #content-card-left>#lblItemID {
+    #items-content-card-left>#lblItemID {
         left: 104px;
         top: 40px;
     }
