@@ -260,10 +260,10 @@ table.table.table-bordered > tbody > tr > td {
     font-family: "Lexend", sans-serif;
 }
 
-#main-section>button.btn.btn-outline-primary:hover,
-#main-section>#btnUpdate:hover,
-#main-section>#btnDelete:hover,
-#main-section>#btnClearAll:hover {
+#customers-main-section>button.btn.btn-outline-primary:hover,
+#customers-main-section>#btnUpdate-customer:hover,
+#customers-main-section>#btnDelete-customer:hover,
+#customers-main-section>#btnClearAll-customer:hover {
     background-color: #122620;
     color: #e7e9e9;
     font-weight: 550;
@@ -277,7 +277,7 @@ table.table.table-bordered > tbody > tr > td {
     border: 3px solid #122620;
     border-radius: 30px;
     position: absolute;
-    top: 10vh;
+    top: 100px;
     left: 70vw;
 }
 
@@ -290,6 +290,17 @@ table.table.table-bordered > tbody > tr > td {
     position: absolute;
     top: 10px;
     left: 50px;
+}
+
+#count {
+    width: fit-content;
+    height: fit-content;
+    font-size: 22px;
+    position: absolute;
+    top: 120px;
+    right: 0;
+    left: 0;
+    margin: auto;
 }
 
 #totalCustomers > img {
@@ -342,6 +353,17 @@ table.table.table-bordered > tbody > tr > td {
         font-size: 18px;
         top: 10px;
         left: 26px;
+    }
+
+    #count {
+        width: fit-content;
+        height: fit-content;
+        font-size: 22px;
+        position: absolute;
+        top: 120px;
+        right: 0;
+        left: 0;
+        margin: auto;
     }
 
     #totalCustomers > img {
