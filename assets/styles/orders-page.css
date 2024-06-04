@@ -488,38 +488,38 @@ table.table.table-bordered > tbody > tr > td {
         width: 40vw;
     }
 
-    #content-card-left>button.btn.btn-primary {
+    #orders-content-card-left>button.btn.btn-primary {
         width: 102px;
         left: 370px;
         top: 244px;
     }
 
-    #content-card-left>#btnClear-1 {
+    #orders-content-card-left>#btnClear-1 {
         width: 75px;
         left: 484px;
         top: 241px;
     }
 
-    #content-card-right>#txtPhoneNumber {
+    #orders-content-card-right>#txtPhoneNumber-orders {
         width: 160px;
     }
 
-    #content-card-right>#lblOrderDate {
+    #orders-content-card-right>#lblOrderDate {
         left: 214px;
     }
 
-    #content-card-right>#txtOrderDate {
+    #orders-content-card-right>#txtOrderDate {
         width: 140px;
         background-position: 97px;
         left: 202px;
     }
 
-    #content-card-right>button.btn.btn-primary {
+    #orders-content-card-right>button.btn.btn-primary {
         width: 120px;
         left: 358px;
     }
 
-    #content-card-right>#btnClear-2 {
+    #orders-content-card-right>#btnClear-2 {
         width: 75px;
         left: 486px;
     }
