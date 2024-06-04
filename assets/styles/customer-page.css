@@ -130,7 +130,7 @@ table.table.table-bordered > tbody > tr > td {
     top: 80px;
 }
 
-#content-card-left>#lblName {
+#customers-content-card-left>#lblName {
     position: absolute;
     left: 283px;
     top: 50px;
