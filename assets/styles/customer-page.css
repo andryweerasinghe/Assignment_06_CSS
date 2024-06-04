@@ -156,20 +156,20 @@ table.table.table-bordered > tbody > tr > td {
     top: 80px;
 }
 
-#content-card-left>#lblPhoneNumber {
+#customers-content-card-left>#lblPhoneNumber {
     position: absolute;
     left: 45px;
     top: 190px;
 }
 
-#content-card-left>#txtPhoneNumber {
+#customers-content-card-left>#txtPhoneNumber {
     width: 215px;
     position: absolute;
     left: 30px;
     top: 220px;
 }
 
-#main-section>#lblSearchOrders {
+#customers-main-section>#lblSearchCustomers {
     font-family: "Lexend", sans-serif;
     font-style: italic;
     font-size: 17px;
@@ -180,7 +180,7 @@ table.table.table-bordered > tbody > tr > td {
     top: 366px;
 }
 
-#main-section>#txtSearch-03 {
+#customers-main-section>#txtSearch-customers {
     width: 305px;
     height: 39px;
     position: absolute;
@@ -192,17 +192,17 @@ table.table.table-bordered > tbody > tr > td {
     top: 394px;
 }
 
-#content-card-left > #txtCustomerID:focus,
-#content-card-left > #txtName:focus,
-#content-card-left > #txtAddress:focus,
-#content-card-left > #txtPhoneNumber:focus,
-#main-section>#txtSearch-03:focus {
+#customers-content-card-left > #txtCustomerID:focus,
+#customers-content-card-left > #txtName:focus,
+#customers-content-card-left > #txtAddress:focus,
+#customers-content-card-left > #txtPhoneNumber:focus,
+#customers-main-section>#txtSearch-customers:focus {
     background-color: #e7e9e9;
     border: 3px solid #717d79;
     box-shadow: none;
 }
 
-#content-card-left>button.btn.btn-primary {
+#customers-content-card-left>button.btn.btn-primary {
     width: 212px;
     position: absolute;
     border-radius: 20px;
@@ -215,11 +215,11 @@ table.table.table-bordered > tbody > tr > td {
     top: 223px;
 }
 
-#content-card-left>button.btn.btn-primary:hover {
+#customers-content-card-left>button.btn.btn-primary:hover {
     border: 3px solid rgba(255, 255, 255, 0.53);
 }
 
-#main-section>button.btn.btn-outline-primary {
+#customers-main-section>button.btn.btn-outline-primary {
     width: 112px;
     height: 40px;
     position: absolute;
@@ -232,24 +232,24 @@ table.table.table-bordered > tbody > tr > td {
     top: 393px;
 }
 
-#main-section>#btnUpdate {
+#customers-main-section>#btnUpdate-customer {
     left: 70vw;
     top: 393px;
 }
 
-#main-section>#btnDelete {
+#customers-main-section>#btnDelete-customer {
     left: 80vw;
     top: 393px;
 }
 
-#main-section>#btnClearAll {
+#customers-main-section>#btnClearAll-customer {
     left: 90vw;
     top: 393px;
 }
 
-#main-section>#btnUpdate,
-#main-section>#btnDelete,
-#main-section>#btnClearAll {
+#customers-main-section>#btnUpdate-customer,
+#customers-main-section>#btnDelete-customer,
+#customers-main-section>#btnClearAll-customer {
     width: 112px;
     height: 40px;
     position: absolute;
