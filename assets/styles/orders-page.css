@@ -553,94 +553,94 @@ table.table.table-bordered > tbody > tr > td {
 }
 
 @media all and (max-width: 1333px) {
-    #content-card-left {
+    #orders-content-card-left {
         width: 44vw;
     }
 
-    #content-card-left > #txtSearch-01,
-    #content-card-right > #txtSearch-02 {
+    #orders-content-card-left > #txtSearch-01,
+    #orders-content-card-right > #txtSearch-02 {
         width: 300px;
         height: 45px;
         background-position:250px;
     }
 
-    #content-card-left>#lblItemName {
+    #orders-content-card-left>#lblItemName-orders {
         position: absolute;
         left: 187px;
         top: 110px;
     }
 
-    #content-card-left > #txtItemName,
-    #content-card-right > #txtCustomerName {
+    #orders-content-card-left > #txtItemName-orders,
+    #orders-content-card-right > #txtCustomerName-orders {
         width: 150px;
     }
 
-    #content-card-right > #lblCustomerName {
+    #orders-content-card-right > #lblCustomerName-orders {
         left: 364px;
     }
 
-    #content-card-left > #txtItemName {
+    #orders-content-card-left > #txtItemName-orders {
         left: 171px;
         width: 180px;
     }
 
-    #content-card-left > #txtUnitPrice {
+    #orders-content-card-left > #txtUnitPrice-orders {
         left: 383px;
     }
 
-    #content-card-left > #lblUnitPrice {
+    #orders-content-card-left > #lblUnitPrice-orders {
         left: 396px;
     }
 
-    #content-card-left > #txtItemId,
-    #content-card-right > #txtOrderId {
+    #orders-content-card-left > #txtItemId-orders,
+    #orders-content-card-right > #txtOrderId {
         width: 120px;
     }
 
-    #content-card-right {
+    #orders-content-card-right {
         width: 44vw;
     }
 
-    #content-card-left>button.btn.btn-primary {
+    #orders-content-card-left>button.btn.btn-primary {
         width: 102px;
         left: 370px;
         top: 244px;
     }
 
-    #content-card-left>#btnClear-1 {
+    #orders-content-card-left>#btnClear-1 {
         width: 75px;
         left: 484px;
         top: 241px;
     }
 
-    #content-card-right>#txtPhoneNumber {
+    #orders-content-card-right>#txtPhoneNumber-orders {
         width: 160px;
     }
 
-    #content-card-right>#lblOrderDate {
+    #orders-content-card-right>#lblOrderDate {
         left: 214px;
     }
 
-    #content-card-right>#txtOrderDate {
+    #orders-content-card-right>#txtOrderDate {
         width: 140px;
         background-position: 97px;
         left: 202px;
     }
 
-    #content-card-right>button.btn.btn-primary {
+    #orders-content-card-right>button.btn.btn-primary {
         width: 120px;
         left: 358px;
     }
 
-    #content-card-right>#btnClear-2 {
+    #orders-content-card-right>#btnClear-2 {
         width: 75px;
         left: 486px;
     }
 
-    #main-section>#lblTotalPrice {
+    #orders-main-section>#lblTotalPrice {
         font-size: 18px;
-        left: 45vw;
-        top: 36vh;
+        left: 0;
+        top: 170px;
     }
 
     #total-price {
@@ -654,58 +654,58 @@ table.table.table-bordered > tbody > tr > td {
         margin: auto;
     }
 
-    #main-section>#btnUpdate {
+    #orders-main-section>#btnUpdate {
         left: 67vw;
     }
 
-    #main-section>#btnDelete {
+    #orders-main-section>#btnDelete {
         left: 77vw;
     }
 
-    #main-section>#btnClearAll {
+    #orders-main-section>#btnClearAll {
         left: 87vw;
     }
 }
 
 @media all and (max-width: 1024px) {
 
-    #container {
-        height: 127vh;
+    #orders-container {
+        height: 1270px;
         position: relative;
         padding-bottom: 47px; /* Height of the footer */
     }
 
-    #main-section {
-        height: 123vh;
+    #orders-main-section {
+        height: 1230px;
     }
 
-    #Tbl {
+    #Tbl-orders {
         position: relative;
         top: 880px;
     }
 
-    #main-section>#lblSearchOrders {
+    #orders-main-section>#lblSearchOrders {
         position: absolute;
         left: 30px;
         top: 845px;
     }
 
-    #main-section>#txtSearch-03 {
+    #orders-main-section>#txtSearch-03 {
         background-position: 259px;
         left: 18px;
         top: 872px;
     }
 
-    #main-section>button.btn.btn-outline-primary {
+    #orders-main-section>button.btn.btn-outline-primary {
         width: 89px;
         left: 335px;
         top: 872px;
     }
 
-    #main-section>#lblTotalPrice {
+    #orders-main-section>#lblTotalPrice {
         font-size: 18px;
-        left: 44vw;
-        top: 77vh;
+        left: 0;
+        top: 440px;
     }
 
     #total-price {
@@ -719,144 +719,144 @@ table.table.table-bordered > tbody > tr > td {
         margin: auto;
     }
 
-    #main-section>#btnUpdate {
+    #orders-main-section>#btnUpdate {
         width: 100px;
         top: 872px;
         left: 62vw;
     }
 
-    #main-section>#btnDelete {
+    #orders-main-section>#btnDelete {
         width: 100px;
         top: 872px;
         left: 73.2vw;
     }
 
-    #main-section>#btnClearAll {
+    #orders-main-section>#btnClearAll {
         width: 100px;
         top: 872px;
         left: 84vw;
     }
 
-    #content-card-left {
-        top: 4vh;
+    #orders-content-card-left {
+        top: 40px;
         width: 90vw;
     }
 
-    #content-card-right {
-        top: 41vh;
+    #orders-content-card-right {
+        top: 410px;
         width: 90vw;
     }
 
-    #content-card-left>#lblUnitPrice {
+    #orders-content-card-left>#lblUnitPrice-orders {
         position: absolute;
         left: 675px;
         top: 110px;
     }
 
-    #content-card-left>#txtUnitPrice {
+    #orders-content-card-left>#txtUnitPrice-orders {
         position: absolute;
         left: 665px;
         top: 140px;
     }
 
-    #content-card-left>#txtItemName {
+    #orders-content-card-left>#txtItemName-orders {
         width: 270px;
         position: absolute;
         left: 277px;
     }
 
-    #content-card-left>#lblItemName {
+    #orders-content-card-left>#lblItemName-orders {
         width: 270px;
         position: absolute;
         left: 290px;
     }
 
-    #content-card-left>#btnClear-1 {
+    #orders-content-card-left>#btnClear-1 {
         width: 80px;
         left: 714px;
         top: 241px;
     }
 
-    #content-card-left>button.btn.btn-primary {
+    #orders-content-card-left>button.btn.btn-primary {
         width: 115px;
         left: 560px;
         top: 244px;
     }
 
-    #content-card-left>#lblOrderQuantity {
+    #orders-content-card-left>#lblOrderQuantity {
         position: absolute;
         left: 290px;
         top: 210px;
     }
 
-    #content-card-left>#txtOrderQuantity {
+    #orders-content-card-left>#txtOrderQuantity {
         width: 180px;
         position: absolute;
         left: 277px;
         top: 240px;
     }
 
-    #content-card-left > #txtItemId,
-    #content-card-right > #txtOrderId {
+    #orders-content-card-left > #txtItemId-orders,
+    #orders-content-card-right > #txtOrderId {
         width: 155px;
     }
 
-    #content-card-left>#txtQtyOnHand {
+    #orders-content-card-left>#txtQtyOnHand-orders {
         width: 155px;
     }
 
-    #content-card-left > #txtSearch-01,
-    #content-card-right > #txtSearch-02 {
+    #orders-content-card-left > #txtSearch-01,
+    #orders-content-card-right > #txtSearch-02 {
         width: 325px;
         height: 45px;
         background-position: 270px;
     }
 
-    #content-card-left > #txtItemName,
-    #content-card-right > #txtCustomerName {
+    #orders-content-card-left > #txtItemName-orders,
+    #orders-content-card-right > #txtCustomerName-orders {
         width: 288px;
     }
 
-    #content-card-right > #txtCustomerName {
+    #orders-content-card-right > #txtCustomerName-orders {
         left: 598px;
     }
 
-    #content-card-right > #lblCustomerName {
+    #orders-content-card-right > #lblCustomerName-orders {
         left: 615px;
     }
 
-    #content-card-right>#txtCustomerId {
+    #orders-content-card-right>#txtCustomerId-orders {
         width: 155px;
         position: absolute;
         left: 277px;
         top: 140px;
     }
 
-    #content-card-right>#lblCustomerID {
+    #orders-content-card-right>#lblCustomerID-orders {
         position: absolute;
         left: 289px;
         top: 110px;
     }
 
-    #content-card-right>#btnClear-2 {
+    #orders-content-card-right>#btnClear-2 {
         width: 80px;
         left: 714px;
         top: 241px;
     }
 
-    #content-card-right>button.btn.btn-primary {
+    #orders-content-card-right>button.btn.btn-primary {
         width: 125px;
         left: 560px;
         top: 244px;
     }
 
-    #content-card-right>#txtOrderDate {
+    #orders-content-card-right>#txtOrderDate {
         width: 175px;
         background-position: 130px;
         left: 277px;
     }
 
-    #content-card-right>#lblOrderDate {
+    #orders-content-card-right>#lblOrderDate {
         left: 288px;
     }
 }
