@@ -123,7 +123,7 @@ table.table.table-bordered > tbody > tr > td {
     top: 50px;
 }
 
-#content-card-left>#txtCustomerID {
+#customers-content-card-left>#txtCustomerID {
     width: 170px;
     position: absolute;
     left: 30px;
