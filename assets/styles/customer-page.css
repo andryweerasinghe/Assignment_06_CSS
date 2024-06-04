@@ -117,7 +117,7 @@ table.table.table-bordered > tbody > tr > td {
     top: 10px;
 }
 
-#content-card-left>#lblCustomerID {
+#customers-content-card-left>#lblCustomerID {
     position: absolute;
     left: 45px;
     top: 50px;
