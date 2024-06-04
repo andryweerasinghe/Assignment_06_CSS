@@ -864,11 +864,11 @@ table.table.table-bordered > tbody > tr > td {
 
 @media all and (max-width: 990px) {
 
-    #content-card-right > #lblCustomerName {
+    #orders-content-card-right > #lblCustomerName-orders {
         left: 555px;
     }
 
-    #content-card-right > #txtCustomerName {
+    #orders-content-card-right > #txtCustomerName-orders {
         left: 540px;
         width: 288px;
     }
