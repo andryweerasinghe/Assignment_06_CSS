@@ -1,4 +1,5 @@
 import {orders,items,customers} from "../db/db.js";
+export {loadOrderTableHome};
 
 $('#orders-section,#customers-section,#items-section').hidden();
 
@@ -28,7 +29,7 @@ function updateTotalCustomersHome() {
 }
 
 function updateTotalItemsHome() {
-    var total = customers.length;
+    var total = items.length;
     $('totalItemsHome').text(total);
 }
 
