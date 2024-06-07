@@ -1,12 +1,12 @@
 import {orders,items,customers} from "../db/db.js";
-export {loadOrderTableHome};
+// export {loadOrderTableHome};
 
-$('#orders-section,#customers-section,#items-section').hidden();
+$('#orders-section,#customers-section,#items-section').hide();
 
 $(document).ready(function(){
    $('.current-page-button').css({
-       background: '#B05200',
-       color: '#FFEEE2',
+       background: '#717d79',
+       color: '#e7e9e9',
        padding: '18px 28px',
        border: '30px',
        text: 'none',
@@ -14,7 +14,7 @@ $(document).ready(function(){
        cursor:'pointer'
    });
    $('.Orders,.Customers,.Items').css({
-      cursor:'pointer',
+      cursor:'pointer'
    });
 });
 
@@ -41,7 +41,7 @@ function updateTotalSales(){
     $('#sales').text("Rs. " + totalSales + "/=");
 }
 
-$('nav-home-section').on('click', function(){
+$('#nav-home-section').on('click', function(){
     const home = $('.current-page-button');
     const orders = $('.Orders');
     const customers = $('.Customers');
@@ -55,7 +55,7 @@ $('nav-home-section').on('click', function(){
     function buttonStyling(button){
         button.css({
             background: 'none',
-            color: '#B05200',
+            color: '#e7e9e9',
             padding: '18px 28px',
             border: '30px',
             text: 'none',
@@ -71,8 +71,8 @@ $('nav-home-section').on('click', function(){
     function applyingHoverEffect(button){
         button.hover(function (){
             $(this).css({
-                background: '#B05200',
-                color: '#FEE5D4'
+                background: '#717d79',
+                color: '#e7e9e9'
             });
         }, function (){
             $(this).css({
@@ -97,13 +97,14 @@ $('nav-home-section').on('click', function(){
             color: '#FEE5D4'
         });
     });
-    loadOrderTableHome();
-    updateTotalCustomersHome();
+    /*loadOrderTableHome();*/
+    /*updateTotalCustomersHome();
     updateTotalItemsHome();
     updateTotalSales();
-    updateTotalOrdersHome();
+    updateTotalOrdersHome();*/
 });
 
+/*
 function loadOrderTableHome(){
     $('#orders-summary').empty();
 
@@ -118,4 +119,4 @@ function loadOrderTableHome(){
         </tr>`
         $('#orders-summary').append(orderRecord);
     });
-}
+}*/

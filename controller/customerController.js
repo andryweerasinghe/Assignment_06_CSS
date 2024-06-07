@@ -8,7 +8,7 @@ $('#nav-customers-section').on('click',() => {
 
     $('#home-section').hide();
     $('#orders-section').hide();
-    $('#customers-section').hide();
+    $('#customers-section').show();
     $('#items-section').hide();
 
     function buttonStyling(button){
