@@ -77,7 +77,7 @@ $('#nav-home-section').on('click', function(){
         }, function (){
             $(this).css({
                 background: 'none',
-                color: '#B05200',
+                color: '#e7e9e9',
                 padding: '18px 28px',
                 border: '30px',
                 text: 'none',
@@ -93,8 +93,8 @@ $('#nav-home-section').on('click', function(){
     // The below hover function is used to keep the home button as same it is without getting overridden by the above functions
     $(home).hover(function (){
         $(this).css({
-            background: '#B05200',
-            color: '#FEE5D4'
+            background: '#717d79',
+            color: '#e7e9e9'
         });
     });
     /*loadOrderTableHome();*/
