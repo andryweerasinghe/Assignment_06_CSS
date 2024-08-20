@@ -21,7 +21,7 @@ $('#nav-items-section').on('click',() => {
     function styleButton(button) {
         button.css({
             background: 'none',
-            color: '#B05200',
+            color: '#e7e9e9',
             padding: '18px 28px',
             border: '30px',
             text: 'none',
@@ -39,13 +39,13 @@ $('#nav-items-section').on('click',() => {
     function applyHoverEffect(button) {
         button.hover(function () {
             $(this).css({
-                background: '#B05200',
-                color: '#FEE5D4'
+                background: '#717d79',
+                color: '#e7e9e9'
             });
         }, function () {
             $(this).css({
                 background: 'none',
-                color: '#B05200',
+                color: '#e7e9e9',
                 padding: '18px 28px',
                 border: '30px',
                 text: 'none',
@@ -63,8 +63,8 @@ $('#nav-items-section').on('click',() => {
     the css style in the orders page btn.This is because all the css is applied to one file (SPA)*/
     $(items).hover(function (){
         $(this).css({
-            background: '#B05200',
-            color: '#FEE5D4'
+            background: '#717d79',
+            color: '#e7e9e9'
         });
     });
 });
@@ -122,15 +122,66 @@ $('#addItems').on('click',() => {
     var itemPrice = $('#txtPrice').val();
     var itemQty = $('#txtQuantity').val();
 
-    let itemModel = new ItemModel(itemID,itemName,itemPrice,itemQty);
+    const itemData = {
+        itemID: itemID,
+        itemName: itemName,
+        itemPrice: itemPrice,
+        itemQty: itemQty
+    }
 
-    items.push(itemModel);
+    console.log(itemData);
+    const itemJSON = JSON.stringify(itemData);
+    console.log(itemJSON);
+    const http = new XMLHttpRequest();
+    http.onreadystatechange = () => {
+        if (http.readyState === 4) {
+            if (http.status === 200 || http.status === 201) {
+                const jsonObject = JSON.stringify(http.responseText);
+            } else {
+                console.log("Failed");
+                console.log("Status Code", http.status);
+                console.log("ready state" + http.readyState);
+            }
+        } else {
+            console.log("Processing Stage : Stage ", http.readyState);
+        }
+    }
+    http.open("POST", "http://localhost:8080/POS_System/itemController", true);
+    http.setRequestHeader("Content-type", "application/json");
+    http.send(itemJSON);
+
+    // let itemModel = new ItemModel(itemID,itemName,itemPrice,itemQty);
+    //
+    // items.push(itemModel);
     loadItemTable();
     clearAll();
     totalItems();
 });
 
 $('#btnDelete-items').on('click',() => {
+    var itemID = $('#txtItemID').val();
+    const itemData = {
+        itemID: itemID
+    }
+    const itemJson = JSON.stringify(itemData);
+    console.log(itemJson);
+    const http = new XMLHttpRequest();
+    http.onreadystatechange = () => {
+        if (http.readyState === 4){
+            if (http.readyState === 200 || http.readyState === 201){
+                const jsonObject = JSON.stringify(http.responseText);
+            } else {
+                console.log("Failed");
+                console.log("Status Code", http.status);
+                console.log("ready state" + http.readyState);
+            }
+        } else {
+            console.log("Processing Stage : Stage ", http.readyState);
+        }
+    }
+    http.open("DELETE", "http://localhost:8080/POS_System/itemController", true);
+    http.setRequestHeader("Content-type", "application/json");
+    http.send(itemJson);
     items.splice(recordIndexItems,1);
     loadItemTable();
     clearAll();
@@ -143,11 +194,39 @@ $('#btnUpdate-items').on('click',() => {
     var itemPrice = $('#txtPrice').val();
     var itemQty = $('#txtQuantity').val();
 
-    var iOb = items[recordIndexItems];
-    iOb.id = itemID;
-    iOb.name = itemName;
-    iOb.price = itemPrice;
-    iOb.qty = itemQty;
+    // var iOb = items[recordIndexItems];
+    // iOb.id = itemID;
+    // iOb.name = itemName;
+    // iOb.price = itemPrice;
+    // iOb.qty = itemQty;
+
+    const itemData = {
+        itemID: itemID,
+        itemName: itemName,
+        itemPrice: itemPrice,
+        itemQty: itemQty
+    }
+    console.log(itemData);
+
+    const itemJSON = JSON.stringify(itemData);
+    console.log(itemJSON);
+    const http = new XMLHttpRequest();
+    http.onreadystatechange = () => {
+        if (http.readyState === 4){
+            if (http.readyState === 200 || http.readyState === 201){
+                const jsonObject = JSON.stringify(http.responseText);
+            } else {
+                console.log("Failed");
+                console.log("Status Code", http.status);
+                console.log("ready state" + http.readyState);
+            }
+        } else {
+            console.log("Processing Stage : Stage ", http.readyState);
+        }
+    }
+    http.open("PUT", "http://localhost:8080/POS_System/itemController");
+    http.setRequestHeader("Content-type", "application/json");
+    http.send(itemJSON);
 
     loadItemTable();
     clearAll();

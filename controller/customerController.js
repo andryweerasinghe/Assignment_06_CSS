@@ -67,25 +67,25 @@ var isValidPhoneNumber = new RegExp("^(?:0|94|\\+94|0094)?(?:(11|21|23|24|25|26|
 
 $(validCustomerId).on("input", function (event) {
     $(validCustomerId).css({
-        border: "2px solid #B05200"
+        border: "2px solid #122620"
     });
 });
 
 $(validCustomerName).on("input", function (event) {
     $(validCustomerName).css({
-        border: "2px solid #B05200"
+        border: "2px solid #122620"
     });
 });
 
 $(validCustomerAddress).on("input", function (event) {
     $(validCustomerAddress).css({
-        border: "2px solid #B05200"
+        border: "2px solid #122620"
     });
 });
 
 $(validCustomerNo).on("input", function (event) {
     $(validCustomerNo).css({
-        border: "2px solid #B05200"
+        border: "2px solid #122620"
     });
 });
 
@@ -144,16 +144,16 @@ function validCustomer(){
     }  else {
 
         $(ValidCustomerID).css({
-            border: "2px solid #B05200"
+            border: "2px solid #122620"
         });
         $(ValidCustomerName).css({
-            border: "2px solid #B05200"
+            border: "2px solid #122620"
         });
         $(ValidCustomerAddress).css({
-            border: "2px solid #B05200"
+            border: "2px solid #122620"
         });
         $(ValidCustomerPhoneNumber).css({
-            border: "2px solid #B05200"
+            border: "2px solid #122620"
         });
 
         emptyPlaceHolder();
@@ -197,19 +197,48 @@ $('#customers-table-tb').on('click','tr',function () {
     $('#txtPhoneNumber').val(phoneNumber);
 });
 
-$('#addCustomers').on('click', () => {
+$('#addCustomers').click(function(){
+    event.preventDefault();
 
     var customerID = $('#txtCustomerID').val();
     var customerName = $('#txtName').val();
     var customerAddress = $('#txtAddress').val();
     var phoneNumber = $('#txtPhoneNumber').val();
 
-    if (customerID === "" || customerName === "" || customerAddress === "" || !isValidPhoneNumber.test(phoneNumber)) {
-        validCustomer();
-        return;
+    // if (customerID === "" || customerName === "" || customerAddress === "" || !isValidPhoneNumber.test(phoneNumber)) {
+    //     validCustomer();
+    //     return;
+    // }
+    const customerData = {
+        customerID: customerID,
+        customerName: customerName,
+        customerAddress: customerAddress,
+        phoneNumber: phoneNumber
+    };
+
+    console.log(customerData);
+    const customerJSON = JSON.stringify(customerData);
+    console.log(customerJSON);
+    /*save data with AJAX*/
+    const http = new XMLHttpRequest();
+    http.onreadystatechange = () => {
+        if (http.readyState === 4) {
+            if (http.status === 200 || http.status === 201) {
+                const jsonObject = JSON.stringify(http.responseText);
+            } else {
+                console.log("Failed");
+                console.log("Status Code", http.status);
+                console.log("ready state" + http.readyState);
+            }
+        } else {
+            console.log("Processing Stage : Stage ", http.readyState);
+        }
     }
-    let customerModel = new CustomerModel(customerID,customerName,customerAddress,phoneNumber);
-    customers.push(customerModel);
+    http.open("POST", "http://localhost:8080/POS_System/customerController", true);
+    http.setRequestHeader("Content-type", "application/json");
+    http.send(customerJSON);
+    // let customerModel = new CustomerModel(customerID,customerName,customerAddress,phoneNumber);
+    // customers.push(customerModel);
 
     emptyPlaceHolder();
     loadCustomerTable();
@@ -218,6 +247,7 @@ $('#addCustomers').on('click', () => {
 });
 
 $('#btnDelete-customer').on('click',() => {
+    event.preventDefault();
 
     var customerID = $('#txtCustomerID').val();
     var customerName = $('#txtName').val();
@@ -228,6 +258,36 @@ $('#btnDelete-customer').on('click',() => {
         validCustomer();
         return;
     }
+
+    const customerData = {
+        customerID: customerID,
+        customerName: customerName,
+        customerAddress: customerAddress,
+        customerPhoneNumber: phoneNumber
+    };
+
+    console.log(customerData);
+
+    const customerJSON = JSON.stringify(customerData);
+    console.log(customerData);
+
+    const http = new XMLHttpRequest();
+    http.onreadystatechange = () => {
+        if (http.readyState === 4) {
+            if (http.status === 200 || http.status === 201) {
+                const jsonObject = JSON.stringify(http.responseText);
+            } else {
+                console.log("Failed");
+                console.log("Status Code", http.status);
+                console.log("ready state" + http.readyState);
+            }
+        } else {
+            console.log("Processing Stage : Stage ", http.readyState);
+        }
+    }
+    http.open("DELETE", "http://localhost:8080/POS_System/customerController", true);
+    http.setRequestHeader("Content-type", "application/json");
+    http.send(customerJSON);
 
     customers.splice(recordIndexCustomers,1);
     emptyPlaceHolder();
@@ -237,6 +297,7 @@ $('#btnDelete-customer').on('click',() => {
 });
 
 $('#btnUpdate-customer').on('click',() => {
+    event.preventDefault();
 
     var customerID = $('#txtCustomerID').val();
     var customerName = $('#txtName').val();
@@ -247,6 +308,35 @@ $('#btnUpdate-customer').on('click',() => {
         validCustomer();
         return;
     }
+
+    const customerData = {
+        customerID: customerID,
+        customerName: customerName,
+        customerAddress: customerAddress,
+        customerPhoneNumber: phoneNumber
+    };
+
+    console.log(customerData);
+
+    const customerJSON = JSON.stringify(customerData);
+    console.log(studentJSON);
+    const http = new XMLHttpRequest();
+    http.onreadystatechange = () => {
+        if (http.readyState === 4) {
+            if (http.status === 200 || http.status === 201) {
+                const jsonObject = JSON.stringify(http.responseText);
+            } else {
+                console.log("Failed");
+                console.log("Status Code", http.status);
+                console.log("ready state" + http.readyState);
+            }
+        } else {
+            console.log("Processing Stage : Stage ", http.readyState);
+        }
+    }
+    http.open("PUT", "http://localhost:8080/POS_System/customerController", true);
+    http.setRequestHeader("Content-type", "application/json");
+    http.send(customerJSON);
 
     var cOb = customers[recordIndexCustomers];
     cOb.id = customerID;

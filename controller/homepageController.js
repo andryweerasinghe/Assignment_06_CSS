@@ -1,5 +1,5 @@
 import {orders,items,customers} from "../db/db.js";
-// export {loadOrderTableHome};
+export {loadOrderTableHome};
 
 $('#orders-section,#customers-section,#items-section').hide();
 
@@ -97,14 +97,13 @@ $('#nav-home-section').on('click', function(){
             color: '#e7e9e9'
         });
     });
-    /*loadOrderTableHome();*/
-    /*updateTotalCustomersHome();
+    loadOrderTableHome();
+    updateTotalCustomersHome();
     updateTotalItemsHome();
     updateTotalSales();
-    updateTotalOrdersHome();*/
+    updateTotalOrdersHome();
 });
 
-/*
 function loadOrderTableHome(){
     $('#orders-summary').empty();
 
@@ -119,4 +118,4 @@ function loadOrderTableHome(){
         </tr>`
         $('#orders-summary').append(orderRecord);
     });
-}*/
+}

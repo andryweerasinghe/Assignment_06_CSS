@@ -1,8 +1,8 @@
-import OrderModel from '../model/OrderModel.js';
+import OrderModel from '../model/ordersModel.js';
 import {orders} from "../db/db.js";
 import {customers} from "../db/db.js";
 import {items} from "../db/db.js";
-import {loadOrderTableHome} from "./IndexController.js";
+import {loadOrderTableHome} from "./homepageController.js";
 import {loadItemTable} from "./ItemsController.js";
 
 var recordIndexOrders;
@@ -26,7 +26,7 @@ $('#nav-orders-section').on('click', () => {
     function styleButton(button) {
         button.css({
             background: 'none',
-            color: '#B05200',
+            color: '#e7e9e9',
             padding: '18px 28px',
             border: '30px',
             text: 'none',
@@ -44,13 +44,13 @@ $('#nav-orders-section').on('click', () => {
     function applyHoverEffect(button) {
         button.hover(function () {
             $(this).css({
-                background: '#B05200',
-                color: '#FEE5D4'
+                background: '#717d79',
+                color: '#e7e9e9'
             });
         }, function () {
             $(this).css({
                 background: 'none',
-                color: '#B05200',
+                color: '#e7e9e9',
                 padding: '18px 28px',
                 border: '30px',
                 text: 'none',
@@ -68,8 +68,8 @@ $('#nav-orders-section').on('click', () => {
     the css style in the orders page btn.This is because all the css is applied to one file (SPA)*/
     $(orders).hover(function (){
         $(this).css({
-            background: '#B05200',
-            color: '#FEE5D4'
+            background: '#717d79',
+            color: '#e7e9e9'
         });
     });
 });
