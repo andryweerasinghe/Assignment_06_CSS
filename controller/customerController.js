@@ -3,6 +3,9 @@ import {customers} from "../db/db.js";
 var recordIndexCustomers;
 
 $('#nav-customers-section').on('click',() => {
+
+    loadCustomerTable();
+
     const home = $('.current-page-button');
     const customers = $('.Customers');
     const orders = $('.Orders');
@@ -172,15 +175,34 @@ $('#btnClearAll-customer').on('click',() => {
 function loadCustomerTable() {
     $("#customers-table-tb").empty();
 
-    customers.map((item,index) => {
-        var customerRecord = `<tr>
+    const http = new XMLHttpRequest();
+    http.onreadystatechange = () => {
+        if (http.readyState === 4) {
+            if (http.status === 200 || http.status === 201){
+                const customers = JSON.parse(http.responseText);
+                console.log(customers);
+
+                customers.map((item,index) => {
+                    var customerRecord = `<tr>
                         <td class="c-id">${item.id}</td>
                         <td class="c-name">${item.name}</td>
                         <td class="c-address">${item.address}</td>
                         <td class="c-phoneNumber">${item.phoneNumber}</td>
                     </tr>`
-        $('#customers-table-tb').append(customerRecord);
-    });
+                    $('#customers-table-tb').append(customerRecord);
+                });
+            } else {
+                console.log("Failed to load customers");
+                console.log("Status Code", http.status);
+                console.log("ready state" + http.readyState);
+            }
+        } else {
+            console.log("Processing Stage : Stage ", http.readyState);
+        }
+    }
+    http.open("GET", "http://localhost:8080/POS_System/customerController", true);
+    http.setRequestHeader("Content-type", "application/json");
+    http.send();
 }
 
 $('#customers-table-tb').on('click','tr',function () {
@@ -210,9 +232,9 @@ $('#addCustomers').click(function(){
     //     return;
     // }
     const customerData = {
-        customerID: customerID,
-        customerName: customerName,
-        customerAddress: customerAddress,
+        id: customerID,
+        name: customerName,
+        address: customerAddress,
         phoneNumber: phoneNumber
     };
 
@@ -225,6 +247,7 @@ $('#addCustomers').click(function(){
         if (http.readyState === 4) {
             if (http.status === 200 || http.status === 201) {
                 const jsonObject = JSON.stringify(http.responseText);
+                loadCustomerTable();
             } else {
                 console.log("Failed");
                 console.log("Status Code", http.status);
@@ -241,7 +264,6 @@ $('#addCustomers').click(function(){
     // customers.push(customerModel);
 
     emptyPlaceHolder();
-    loadCustomerTable();
     clearAll();
     totalCustomers();
 });
@@ -249,33 +271,31 @@ $('#addCustomers').click(function(){
 $('#btnDelete-customer').on('click',() => {
     event.preventDefault();
 
-    var customerID = $('#txtCustomerID').val();
-    var customerName = $('#txtName').val();
-    var customerAddress = $('#txtAddress').val();
-    var phoneNumber = $('#txtPhoneNumber').val();
+    const customerID = encodeURIComponent($('#txtCustomerID').val());
 
-    if (customerID === "" || customerName === "" || customerAddress === "" || phoneNumber === "") {
+    if (!customerID){
         validCustomer();
         return;
     }
+    //creating an object ***When creating an object make sure the left side has the names of the columns in the table itself***
+    // const customerData = {
+    //     id: customerID,
+    //     name: customerName,
+    //     address: customerAddress,
+    //     phoneNumber: phoneNumber
+    // };
 
-    const customerData = {
-        customerID: customerID,
-        customerName: customerName,
-        customerAddress: customerAddress,
-        customerPhoneNumber: phoneNumber
-    };
-
-    console.log(customerData);
-
-    const customerJSON = JSON.stringify(customerData);
-    console.log(customerData);
+    // console.log(customerData);
+    //
+    // const customerJSON = JSON.stringify(customerData);
+    // console.log(customerData);
 
     const http = new XMLHttpRequest();
     http.onreadystatechange = () => {
         if (http.readyState === 4) {
-            if (http.status === 200 || http.status === 201) {
+            if (http.status === 200 || http.status === 201 || http.status === 204) {
                 const jsonObject = JSON.stringify(http.responseText);
+                loadCustomerTable();
             } else {
                 console.log("Failed");
                 console.log("Status Code", http.status);
@@ -285,13 +305,12 @@ $('#btnDelete-customer').on('click',() => {
             console.log("Processing Stage : Stage ", http.readyState);
         }
     }
-    http.open("DELETE", "http://localhost:8080/POS_System/customerController", true);
+    http.open("DELETE", "http://localhost:8080/POS_System/customerController?id=${customerID}", true);
     http.setRequestHeader("Content-type", "application/json");
-    http.send(customerJSON);
+    http.send();
 
     customers.splice(recordIndexCustomers,1);
     emptyPlaceHolder();
-    loadCustomerTable();
     clearAll();
     totalCustomers();
 });
@@ -310,10 +329,10 @@ $('#btnUpdate-customer').on('click',() => {
     }
 
     const customerData = {
-        customerID: customerID,
-        customerName: customerName,
-        customerAddress: customerAddress,
-        customerPhoneNumber: phoneNumber
+        id: customerID,
+        name: customerName,
+        address: customerAddress,
+        phoneNumber: phoneNumber
     };
 
     console.log(customerData);

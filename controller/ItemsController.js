@@ -123,10 +123,10 @@ $('#addItems').on('click',() => {
     var itemQty = $('#txtQuantity').val();
 
     const itemData = {
-        itemID: itemID,
-        itemName: itemName,
-        itemPrice: itemPrice,
-        itemQty: itemQty
+        id: itemID,
+        name: itemName,
+        price: itemPrice,
+        qty: itemQty
     }
 
     console.log(itemData);
@@ -161,7 +161,7 @@ $('#addItems').on('click',() => {
 $('#btnDelete-items').on('click',() => {
     var itemID = $('#txtItemID').val();
     const itemData = {
-        itemID: itemID
+        id: itemID
     }
     const itemJson = JSON.stringify(itemData);
     console.log(itemJson);
@@ -201,10 +201,10 @@ $('#btnUpdate-items').on('click',() => {
     // iOb.qty = itemQty;
 
     const itemData = {
-        itemID: itemID,
-        itemName: itemName,
-        itemPrice: itemPrice,
-        itemQty: itemQty
+        id: itemID,
+        name: itemName,
+        price: itemPrice,
+        qty: itemQty
     }
     console.log(itemData);
 
