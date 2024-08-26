@@ -5,6 +5,8 @@ var recordIndexItems;
 
 $('#nav-items-section').on('click',() => {
 
+    loadItemTable();
+
     const home = $('.current-page-button');
     const orders = $('.Orders');
     const customers = $('.Customers');
@@ -91,15 +93,33 @@ $('#btnClearAll-items').on('click',() => {
 function loadItemTable() {
     $("#items-table-tb").empty();
 
-    items.map((item,index) => {
-        var itemRecord = `<tr>
+    const http = new XMLHttpRequest();
+    http.onreadystatechange = () => {
+        if (http.readyState === 4 ){
+            if (http.status === 200 || http.status === 201) {
+                const items = JSON.parse(http.responseText);
+
+                items.map((item,index) => {
+                    var itemRecord = `<tr>
                         <td class="i-id">${item.id}</td>
                         <td class="i-name">${item.name}</td>
                         <td class="i-price">${item.price}</td>
                         <td class="i-qty">${item.qty}</td>
                     </tr>`
-        $('#items-table-tb').append(itemRecord);
-    });
+                    $('#items-table-tb').append(itemRecord);
+                });
+            } else {
+                console.log("Failed to load items");
+                console.log("Status Code ", http.status);
+                console.log("ready state " + http.readyState);
+            }
+        } else {
+            console.log("Processing Stage : Stage ", http.readyState);
+        }
+    }
+    http.open("GET", "http://localhost:8080/POS_System/itemController", true);
+    http.setRequestHeader("Content-type", "application/json");
+    http.send();
 }
 
 $('#items-table-tb').on('click','tr',function () {
@@ -117,6 +137,8 @@ $('#items-table-tb').on('click','tr',function () {
 });
 
 $('#addItems').on('click',() => {
+    event.preventDefault();
+
     var itemID = $('#txtItemID').val();
     var itemName = $('#txtItemName').val();
     var itemPrice = $('#txtPrice').val();
@@ -137,6 +159,7 @@ $('#addItems').on('click',() => {
         if (http.readyState === 4) {
             if (http.status === 200 || http.status === 201) {
                 const jsonObject = JSON.stringify(http.responseText);
+                loadItemTable();
             } else {
                 console.log("Failed");
                 console.log("Status Code", http.status);
@@ -150,55 +173,39 @@ $('#addItems').on('click',() => {
     http.setRequestHeader("Content-type", "application/json");
     http.send(itemJSON);
 
-    // let itemModel = new ItemModel(itemID,itemName,itemPrice,itemQty);
-    //
-    // items.push(itemModel);
-    loadItemTable();
     clearAll();
     totalItems();
 });
 
 $('#btnDelete-items').on('click',() => {
     var itemID = $('#txtItemID').val();
-    const itemData = {
-        id: itemID
-    }
-    const itemJson = JSON.stringify(itemData);
-    console.log(itemJson);
-    const http = new XMLHttpRequest();
-    http.onreadystatechange = () => {
-        if (http.readyState === 4){
-            if (http.readyState === 200 || http.readyState === 201){
-                const jsonObject = JSON.stringify(http.responseText);
-            } else {
-                console.log("Failed");
-                console.log("Status Code", http.status);
-                console.log("ready state" + http.readyState);
-            }
-        } else {
-            console.log("Processing Stage : Stage ", http.readyState);
+
+    $.ajax({
+        url: "http://localhost:8080/POS_System/itemController?itemID=" + itemID,
+        type: 'DELETE',
+        success: function (res) {
+            console.log(JSON.stringify(res));
+            loadItemTable();
+            console.log("Item Deleted");
+        },
+        error: (res) => {
+            console.error(res);
+            console.log("Item is not Deleted")
         }
-    }
-    http.open("DELETE", "http://localhost:8080/POS_System/itemController", true);
-    http.setRequestHeader("Content-type", "application/json");
-    http.send(itemJson);
+    })
+
     items.splice(recordIndexItems,1);
-    loadItemTable();
     clearAll();
     totalItems();
 });
 
 $('#btnUpdate-items').on('click',() => {
+    event.preventDefault();
+
     var itemID = $('#txtItemID').val();
     var itemName = $('#txtItemName').val();
     var itemPrice = $('#txtPrice').val();
     var itemQty = $('#txtQuantity').val();
-
-    // var iOb = items[recordIndexItems];
-    // iOb.id = itemID;
-    // iOb.name = itemName;
-    // iOb.price = itemPrice;
-    // iOb.qty = itemQty;
 
     const itemData = {
         id: itemID,
@@ -207,28 +214,41 @@ $('#btnUpdate-items').on('click',() => {
         qty: itemQty
     }
     console.log(itemData);
-
     const itemJSON = JSON.stringify(itemData);
-    console.log(itemJSON);
-    const http = new XMLHttpRequest();
-    http.onreadystatechange = () => {
-        if (http.readyState === 4){
-            if (http.readyState === 200 || http.readyState === 201){
-                const jsonObject = JSON.stringify(http.responseText);
-            } else {
-                console.log("Failed");
-                console.log("Status Code", http.status);
-                console.log("ready state" + http.readyState);
-            }
-        } else {
-            console.log("Processing Stage : Stage ", http.readyState);
-        }
-    }
-    http.open("PUT", "http://localhost:8080/POS_System/itemController");
-    http.setRequestHeader("Content-type", "application/json");
-    http.send(itemJSON);
 
-    loadItemTable();
+    $.ajax({
+        url: 'http://localhost:8080/POS_System/itemController',
+        type: 'PUT',
+        data: itemJSON,
+        contentType: 'application/json',
+        success: function (res) {
+            console.log(JSON.stringify(res));
+            loadItemTable();
+            console.log("Item Updated");
+        },
+        error: (res) => {
+            console.error(res);
+            console.log("Item Not Updated")
+        }
+    });
+
+    // const http = new XMLHttpRequest();
+    // http.onreadystatechange = () => {
+    //     if (http.readyState === 4){
+    //         if (http.readyState === 200 || http.readyState === 201){
+    //             const jsonObject = JSON.stringify(http.responseText);
+    //         } else {
+    //             console.log("Failed");
+    //             console.log("Status Code", http.status);
+    //             console.log("ready state" + http.readyState);
+    //         }
+    //     } else {
+    //         console.log("Processing Stage : Stage ", http.readyState);
+    //     }
+    // }
+    // http.open("PUT", "http://localhost:8080/POS_System/itemController");
+    // http.setRequestHeader("Content-type", "application/json");
+    // http.send(itemJSON);
     clearAll();
     totalItems();
 });
@@ -248,5 +268,34 @@ function searchItems(query) {
 
 $('#searchItems').on('click', function() {
     const searchQuery = $('#txtSearch-items').val();
-    searchItems(searchQuery);
+    // const encodedQuery = encodeURIComponent(searchQuery);
+    $.ajax({
+        url: "http://localhost:8080/POS_System/itemController?itemId=" + searchQuery,
+        type: 'GET',
+        success: function (res) {
+            console.log("Response: " + res);
+            try {
+                // const jsonObject = JSON.parse(res);
+
+                if (res) {
+                    $('#txtItemID').val(res.id);
+                    $('#txtItemName').val(res.name);
+                    $('#txtPrice').val(res.price);
+                    $('#txtQuantity').val(res.qty);
+                    console.log("Text fields updated successfully.");
+                } else {
+                    console.log("No item data returned.");
+                }
+            } catch (error) {
+                console.log("Error parsing JSON response:", error);
+            }
+            console.log(JSON.stringify(res));
+            console.log("Item Found");
+        },
+        error: (res) => {
+            console.error(res);
+            console.log("Customer Not Found");
+        }
+    });
+    // searchItems(searchQuery);
 });

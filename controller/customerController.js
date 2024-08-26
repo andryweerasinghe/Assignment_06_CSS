@@ -126,36 +126,36 @@ function validCustomer(){
 
     if (!isValidCustomerName.test(customerName) || !isValidCustomerAddress.test(customerAddress) || !isValidPhoneNumber.test(phoneNumber)) {
 
-        $(ValidCustomerName).css({
+        $(validCustomerName).css({
             border: "3px solid red"
         });
-        $(ValidCustomerAddress).css({
+        $(validCustomerAddress).css({
             border: "3px solid red"
         });
-        $(ValidCustomerPhoneNumber).css({
+        $(validCustomerNo).css({
             border: "3px solid red"
         });
 
-        $(ValidCustomerName).attr("placeholder", "Wrong Input Try Again");
-        $(ValidCustomerAddress).attr("placeholder", "Wrong Input Try Again");
-        $(ValidCustomerPhoneNumber).attr("placeholder", "Wrong Input Try Again");
+        $(validCustomerName).attributes("placeholder", "Wrong Input Try Again");
+        $(validCustomerAddress).attributes("placeholder", "Wrong Input Try Again");
+        $(validCustomerNo).attributes("placeholder", "Wrong Input Try Again");
 
-        $(ValidCustomerName).addClass('red');
-        $(ValidCustomerAddress).addClass('red');
-        $(ValidCustomerPhoneNumber).addClass('red');
+        $(validCustomerName).autoAddCss('red');
+        $(validCustomerAddress).autoAddCss('red');
+        $(validCustomerNo).autoAddCss('red');
 
     }  else {
 
-        $(ValidCustomerID).css({
+        $(validCustomerId).css({
             border: "2px solid #122620"
         });
-        $(ValidCustomerName).css({
+        $(validCustomerName).css({
             border: "2px solid #122620"
         });
-        $(ValidCustomerAddress).css({
+        $(validCustomerAddress).css({
             border: "2px solid #122620"
         });
-        $(ValidCustomerPhoneNumber).css({
+        $(validCustomerNo).css({
             border: "2px solid #122620"
         });
 
@@ -271,7 +271,7 @@ $('#addCustomers').click(function(){
 $('#btnDelete-customer').on('click',() => {
     event.preventDefault();
 
-    const customerID = encodeURIComponent($('#txtCustomerID').val());
+    const customerID = $('#txtCustomerID').val();
 
     if (!customerID){
         validCustomer();
@@ -279,35 +279,45 @@ $('#btnDelete-customer').on('click',() => {
     }
     //creating an object ***When creating an object make sure the left side has the names of the columns in the table itself***
     // const customerData = {
-    //     id: customerID,
-    //     name: customerName,
-    //     address: customerAddress,
-    //     phoneNumber: phoneNumber
+    //     id: customerID
     // };
 
     // console.log(customerData);
     //
     // const customerJSON = JSON.stringify(customerData);
     // console.log(customerData);
-
-    const http = new XMLHttpRequest();
-    http.onreadystatechange = () => {
-        if (http.readyState === 4) {
-            if (http.status === 200 || http.status === 201 || http.status === 204) {
-                const jsonObject = JSON.stringify(http.responseText);
-                loadCustomerTable();
-            } else {
-                console.log("Failed");
-                console.log("Status Code", http.status);
-                console.log("ready state" + http.readyState);
-            }
-        } else {
-            console.log("Processing Stage : Stage ", http.readyState);
+    // const customerJSON = JSON.stringify(customerData);
+    $.ajax({
+        url: 'http://localhost:8080/POS_System/customerController?customerID=' + customerID,
+        type: 'DELETE',
+        success: function(res)  {
+            console.log(JSON.stringify(res));
+            loadCustomerTable();
+            console.log("Customer Deleted");
+        },
+        error: (res) => {
+            console.error(res);
+            console.log("Customer Not Deleted");
         }
-    }
-    http.open("DELETE", "http://localhost:8080/POS_System/customerController?id=${customerID}", true);
-    http.setRequestHeader("Content-type", "application/json");
-    http.send();
+    });
+    // const http = new XMLHttpRequest();
+    // http.onreadystatechange = () => {
+    //     if (http.readyState === 4) {
+    //         if (http.status === 200 || http.status === 201 || http.status === 204) {
+    //             const jsonObject = JSON.stringify(http.responseText);
+    //             loadCustomerTable();
+    //         } else {
+    //             console.log("Failed");
+    //             console.log("Status Code", http.status);
+    //             console.log("ready state" + http.readyState);
+    //         }
+    //     } else {
+    //         console.log("Processing Stage : Stage ", http.readyState);
+    //     }
+    // }
+    // http.open("DELETE", "http://localhost:8080/POS_System/customerController?customerId=", true);
+    // http.setRequestHeader("Content-type", "application/json");
+    // http.send(customerJSON);
 
     customers.splice(recordIndexCustomers,1);
     emptyPlaceHolder();
@@ -338,12 +348,13 @@ $('#btnUpdate-customer').on('click',() => {
     console.log(customerData);
 
     const customerJSON = JSON.stringify(customerData);
-    console.log(studentJSON);
+    console.log(customerJSON);
     const http = new XMLHttpRequest();
     http.onreadystatechange = () => {
         if (http.readyState === 4) {
-            if (http.status === 200 || http.status === 201) {
+            if (http.status === 200 || http.status === 201 || http.status === 204) {
                 const jsonObject = JSON.stringify(http.responseText);
+                loadCustomerTable();
             } else {
                 console.log("Failed");
                 console.log("Status Code", http.status);
@@ -357,33 +368,49 @@ $('#btnUpdate-customer').on('click',() => {
     http.setRequestHeader("Content-type", "application/json");
     http.send(customerJSON);
 
-    var cOb = customers[recordIndexCustomers];
-    cOb.id = customerID;
-    cOb.name = customerName;
-    cOb.address = customerAddress;
-    cOb.phoneNumber = phoneNumber;
+    // var cOb = customers[recordIndexCustomers];
+    // cOb.id = customerID;
+    // cOb.name = customerName;
+    // cOb.address = customerAddress;
+    // cOb.phoneNumber = phoneNumber;
 
     emptyPlaceHolder();
-    loadCustomerTable();
     clearAll();
     totalCustomers();
 });
 
-function searchCustomers(query) {
-    const searchTerm = query.toLowerCase();
-
-    for (let i = 0; i < customers.length; i++) {
-        if (searchTerm === customers[i].id.toLowerCase() || searchTerm === customers[i].phoneNumber.toLowerCase()) {
-            $('#txtCustomerID').val(customers[i].id);
-            $('#txtName').val(customers[i].name);
-            $('#txtAddress').val(customers[i].address);
-            $('#txtPhoneNumber').val(customers[i].phoneNumber);
-            break;
-        }
-    }
-}
-
 $('#search-customer').on('click', function() {
     const searchQuery = $('#txtSearch-customers').val();
-    searchCustomers(searchQuery);
+    const encodedQuery = encodeURIComponent(searchQuery);
+    const http = new XMLHttpRequest();
+    http.onreadystatechange = () => {
+        console.log("Processing Stage: Stage", http.readyState);
+
+        if (http.readyState === 4) {
+            console.log("Status Code", http.status);
+            console.log("Response Text:", http.responseText);
+
+            if (http.status === 200) {
+                try {
+                    const jsonObject = JSON.parse(http.responseText);
+
+                    if (jsonObject) {
+                        $('#txtCustomerID').val(jsonObject.id);
+                        $('#txtName').val(jsonObject.name);
+                        $('#txtAddress').val(jsonObject.address);
+                        $('#txtPhoneNumber').val(jsonObject.phoneNumber);
+                        console.log("Text fields updated successfully.");
+                    } else {
+                        console.log("No customer data returned.");
+                    }
+                } catch (error) {
+                    console.log("Error parsing JSON response:", error);
+                }
+            } else {
+                console.log("Failed with status code:", http.status);
+            }
+        }
+    };
+    http.open("GET", `http://localhost:8080/POS_System/customerController?searchTerm=${encodedQuery}`, true);
+    http.send();
 });
