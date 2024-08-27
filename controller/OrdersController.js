@@ -243,34 +243,64 @@ $('#orders-table-tb').on('click','tr',function () {
     var qtyOnHand = $(this).find(".o-qty-on-hand").text();
     var orderQty = $(this).find(".o-qty").text();
     var orderDate = $(this).find(".o-order-date").text();
-    var cId = $(this).find(".o-customerID").text();
+    var searchTerm = $(this).find(".o-customerID").text();
     var total = $(this).find(".o-totalPrice").text();
 
     $('#txtItemId-orders').val(iId);
-    $('#txtItemName-orders').val(itemName);
-    $('#txtUnitPrice-orders').val(unitPrice);
+    $('#txtItemName-orders').val(itemName).prop('readonly', true);
+    $('#txtUnitPrice-orders').val(unitPrice).prop('readonly', true);
     $('#txtOrderQuantity').val(orderQty);
 
     $('#txtOrderId').val(oId);
-    $('#txtCustomerId-orders').val(cId);
+    $('#txtCustomerId-orders').val(searchTerm);
     $('#price-tag').text("Rs : "+total+"/=");
 
-    var customer = customers.find(c => c.id === cId);
-    var item = items.find(i => i.id === iId);
+    $.ajax({
+        url: "http://localhost:8080/POS_System/customerController?searchTerm=" + searchTerm,
+        type: 'GET',
+        success: function (res) {
+            console.log(JSON.stringify(res));
+            console.log("Customer Found");
+            if (res){
+                $('#txtCustomerName-orders').val(res.name).prop('readonly', true);
+                $('#txtPhoneNumber-orders').val(res.phoneNumber).prop('readonly', true);
+            }
+        },
+        error: (res) => {
+            console.log(res);
+            console.log("Customer not Found");
+        }
+    });
 
-    if (customer) {
-        $('#txtCustomerName-orders').val(customer.name);
-        $('#txtPhoneNumber-orders').val(customer.phoneNumber);
-    } else {
-        $('#txtCustomerName-orders').val("");
-        $('#txtPhoneNumber-orders').val("");
-    }
-
-    if (item) {
-        $('#txtQtyOnHand-orders').val(item.qty);
-    } else {
-        $('#txtQtyOnHand-orders').val("");
-    }
+    $.ajax({
+        url: "http://localhost:8080/POS_System/itemController?id=" + iId,
+        type: 'GET',
+        success: function (res) {
+            console.log(JSON.stringify(res));
+            console.log("Item Found");
+            if (res){
+                $('#txtQtyOnHand-orders').val(res.qty).prop('readonly', true);
+            }
+        }, error: (res) => {
+            console.l
+        }
+    })
+    // var customer = customers.find(c => c.id === cId);
+    // var item = items.find(i => i.id === iId);
+    //
+    // if (customer) {
+    //     $('#txtCustomerName-orders').val(customer.name);
+    //     $('#txtPhoneNumber-orders').val(customer.phoneNumber);
+    // } else {
+    //     $('#txtCustomerName-orders').val("");
+    //     $('#txtPhoneNumber-orders').val("");
+    // }
+    //
+    // if (item) {
+    //     $('#txtQtyOnHand-orders').val(item.qty);
+    // } else {
+    //     $('#txtQtyOnHand-orders').val("");
+    // }
 
     $('#txtOrderDate').val(orderDate);
 
@@ -299,6 +329,28 @@ $('#place-order').on('click', function () {
     var orderDate = $('#txtOrderDate').val();
 
     var totalPrice = unitPrice * orderQty;
+    var newQtyOnHand = qtyOnHand - orderQty;
+
+    const newItemData = {
+        id: itemID,
+        qty: qtyOnHand
+    }
+
+    $.ajax({
+        url: "http://localhost:8080/POS_System/itemController",
+        type: 'PUT',
+        data: newItemData,
+        contentType: 'application/json',
+        success: function (res) {
+            console.log(JSON.stringify(res));
+            loadOrderTable();
+            console.log("Quantity on hand updated");
+        },
+        error: (res) => {
+            console.log(res);
+            console.log("Failed to update the quantity on hand");
+        }
+    });
 
     const orderData = {
         orderId: orderID,
@@ -366,8 +418,22 @@ $('#place-order').on('click', function () {
 
 
 $('#btnDelete').on('click', function () {
+    var orderId = $('#txtOrderId').val();
+
+    $.ajax({
+        url: "http://localhost:8080/POS_System/orderController?orderId=" + orderId,
+        type: 'DELETE',
+        success: function (res) {
+            console.log(JSON.stringify(res));
+            loadOrderTable();
+            console.log("Order Deleted");
+        },
+        error: (res) => {
+            console.error(res);
+            console.log("Order is not Deleted");
+        }
+    });
     orders.splice(recordIndexOrders,1);
-    loadOrderTable();
     updatePriceTag();
     ClearAll();
 });
