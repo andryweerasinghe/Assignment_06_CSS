@@ -10,6 +10,8 @@ var priceTagInterval;
 
 $('#nav-orders-section').on('click', () => {
 
+    loadOrderTable();
+
     const home = $('.current-page-button');
     const orders = $('.Orders');
     const customers = $('.Customers');
@@ -126,50 +128,104 @@ function searchCustomers(query) {
 
 
 $('#search-customers-orders').on('click', function() {
-    const searchQuery = $('#txtSearch-02').val();
-    searchCustomers(searchQuery);
+    const searchTerm = $('#txtSearch-02').val();
+    $.ajax({
+        url: "http://localhost:8080/POS_System/customerController?searchTerm=" + searchTerm,
+        type: 'GET',
+        success: function (res) {
+            console.log("Response: " + res);
+            try {
+                // const jsonObject = JSON.parse(res);
+
+                if (res) {
+                    $('#txtCustomerId-orders').val(res.id);
+                    $('#txtCustomerName-orders').val(res.name);
+                    $('#txtPhoneNumber-orders').val(res.phoneNumber);
+                    $('#txtSearch-02').val("");
+                    console.log("Text fields updated successfully.");
+                } else {
+                    console.log("No item data returned.");
+                }
+            } catch (error) {
+                console.log("Error parsing JSON response:", error);
+            }
+            console.log(JSON.stringify(res));
+            console.log("Item Found");
+        },
+        error: (res) => {
+            console.error(res);
+            console.log("Customer Not Found");
+        }
+    });
 });
 
-/*Search Items*/
-function searchItems(query) {
-    const searchTerm = query.toLowerCase(); /*Convert the search query to lowercase for case-insensitive search*/
-
-    for (let i = 0; i < items.length; i++) {
-        if (searchTerm === items[i].id.toLowerCase() || searchTerm === items[i].name.toLowerCase()) {
-            $('#txtItemId-orders').val(items[i].id);
-            $('#txtItemName-orders').val(items[i].name);
-            $('#txtUnitPrice-orders').val(items[i].price);
-            $('#txtQtyOnHand-orders').val(items[i].qty);
-        }
-    }
-}
-
 $('#search-items-orders').on('click', function() {
-    const searchQuery = $('#txtSearch-01').val();
-    searchItems(searchQuery);
+    const id = $('#txtSearch-01').val();
+    $.ajax({
+        url: "http://localhost:8080/POS_System/itemController?id=" + id,
+        type: 'GET',
+        success: function (res) {
+            console.log("Response: " + res);
+            try {
+                // const jsonObject = JSON.parse(res);
+
+                if (res) {
+                    $('#txtItemId-orders').val(res.id);
+                    $('#txtItemName-orders').val(res.name);
+                    $('#txtUnitPrice-orders').val(res.price);
+                    $('#txtQtyOnHand-orders').val(res.qty);
+                    console.log("Text fields updated successfully.");
+                } else {
+                    console.log("No item data returned.");
+                }
+            } catch (error) {
+                console.log("Error parsing JSON response:", error);
+            }
+            console.log(JSON.stringify(res));
+            console.log("Item Found");
+        },
+        error: (res) => {
+            console.error(res);
+            console.log("Customer Not Found");
+        }
+    });
 });
 
 
 /**Add, Update, Delete, Clear All**/
 
 function loadOrderTable() {
-    $("#orders-table-tb").empty();
+    $("#orders-table-tb").empty();  // Clear any existing rows
 
-    orders.map((item, index) => {
-        var orderRecord = `<tr>
-            <td class="o-id">${item.orderID}</td>
-            <td class="o-itemID">${item.itemID}</td>
-            <td class="o-itemName">${item.ItemName}</td>
-            <td class="o-unit-price">${item.unitPrice}</td>
-            <td class="o-qty-on-hand">${item.qtyOnHand}</td>
-            <td class="o-qty">${item.orderQty}</td>
-            <td class="o-order-date">${item.orderDate}</td>
-            <td class="o-customerID">${item.customerID}</td>
-            <td class="o-totalPrice">${item.totalPrice}</td>
-        </tr>`
-        $('#orders-table-tb').append(orderRecord);
+    $.ajax({
+        url: `http://localhost:8080/POS_System/orderController`,
+        type: 'GET',
+        dataType: 'json',  // Expect JSON response
+        success: function (res) {
+            console.log("Parsed JSON:", res);  // Log the parsed JSON for debugging
+
+            res.forEach((item) => {
+                var orderRecord = `<tr>
+                    <td class="o-id">${item.orderId || 'N/A'}</td>
+                    <td class="o-itemID">${item.itemId || 'N/A'}</td>
+                    <td class="o-itemName">${item.itemName || 'N/A'}</td>
+                    <td class="o-unit-price">${item.unitPrice || 'N/A'}</td>
+                    <td class="o-qty-on-hand">${item.qtyOnHand || 'N/A'}</td>
+                    <td class="o-qty">${item.orderQuantity || 'N/A'}</td>
+                    <td class="o-order-date">${item.orderDate || 'N/A'}</td>
+                    <td class="o-customerID">${item.customerId || 'N/A'}</td>
+                    <td class="o-totalPrice">${item.totalPrice || 'N/A'}</td>
+                </tr>`;
+                $('#orders-table-tb').append(orderRecord);
+            });
+        },
+        error: (res) => {
+            console.log("Error:", res);
+            console.log("Unable to load orders table");
+        }
     });
 }
+
 
 function totalTagUpdate() {
     priceTagInterval = setInterval(function(){
@@ -244,6 +300,17 @@ $('#place-order').on('click', function () {
 
     var totalPrice = unitPrice * orderQty;
 
+    const orderData = {
+        orderId: orderID,
+        customerId: customerID,
+        orderDate: orderDate,
+        totalPrice: totalPrice,
+        itemId: itemID,
+        orderQty: orderQty
+    }
+
+    const orderJSON = JSON.stringify(orderData);
+
     /*Check if the item already exists*/
     var existingItemIndex = items.findIndex(item => item.id === itemID);
 
@@ -264,8 +331,26 @@ $('#place-order').on('click', function () {
         orders[existingOrderIndex].totalPrice += totalPrice;
     } else {
         /*If the order doesn't exist, create a new one*/
-        let orderModel = new OrderModel(itemID, itemName, unitPrice, qtyOnHand, orderQty, orderID, customerID, customerName, phoneNumber, orderDate, totalPrice);
-        orders.push(orderModel);
+        const http = new XMLHttpRequest();
+        http.onreadystatechange = () => {
+            if (http.readyState == 4) {
+                if (http.status === 200 || http.status === 201){
+                    const jsonObject = JSON.stringify(http.responseText);
+                    loadOrderTable();
+                } else {
+                    console.log("Failed");
+                    console.log("Status Code: ", http.status);
+                    console.log("ready state: " + http.readyState);
+                }
+            } else {
+                console.log("Processing Stage : Stage ", http.readyState);
+            }
+        }
+        http.open("POST", "http://localhost:8080/POS_System/orderController", true);
+        http.setRequestHeader("Content-type", "application/json");
+        http.send(orderJSON);
+        // let orderModel = new OrderModel(itemID, itemName, unitPrice, qtyOnHand, orderQty, orderID, customerID, customerName, phoneNumber, orderDate, totalPrice);
+        // orders.push(orderModel);
     }
 
     /*Update the price tag and tables*/

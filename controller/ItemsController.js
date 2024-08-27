@@ -267,10 +267,10 @@ function searchItems(query) {
 }
 
 $('#searchItems').on('click', function() {
-    const searchQuery = $('#txtSearch-items').val();
+    const id = $('#txtSearch-items').val();
     // const encodedQuery = encodeURIComponent(searchQuery);
     $.ajax({
-        url: "http://localhost:8080/POS_System/itemController?itemId=" + searchQuery,
+        url: "http://localhost:8080/POS_System/itemController?id=" + id,
         type: 'GET',
         success: function (res) {
             console.log("Response: " + res);
