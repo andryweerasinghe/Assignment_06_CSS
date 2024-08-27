@@ -333,7 +333,7 @@ $('#place-order').on('click', function () {
 
     const newItemData = {
         id: itemID,
-        qty: qtyOnHand
+        qty: newQtyOnHand
     }
 
     $.ajax({
@@ -452,6 +452,32 @@ $('#btnUpdate').on('click',function () {
     var orderDate = $('#txtOrderDate').val();
 
     var totalPrice = unitPrice * orderQty;
+
+    const orderData = {
+        orderId: this.orderId,
+        customerID: customerID,
+        orderDate: orderDate,
+        totalPrice: totalPrice,
+        itemId: itemID,
+        orderQty: orderQty
+    }
+    const orderJSON = JSON.stringify(orderData);
+
+    $.ajax({
+        url: "http://localhost:8080/POS_System/orderController",
+        type: 'PUT',
+        data: orderJSON,
+        contentType: 'application/json',
+        success: function (res) {
+            console.log(JSON.stringify(res));
+            loadOrderTable();
+            console.log("Order Updated");
+        },
+        error: (res) => {
+            console.error(res);
+            console.log("Order Not Updated");
+        }
+    });
 
     var oOb = orders[recordIndexOrders];
     var oldOrderQty = parseInt(oOb.orderQty);
